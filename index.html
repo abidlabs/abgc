@@ -160,6 +160,197 @@
             background: #5a6268;
         }
 
+        .score-bar {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .score-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .score-item.correct-score {
+            color: #28a745;
+        }
+
+        .score-item.incorrect-score {
+            color: #dc3545;
+        }
+
+        .score-item.percentage-score {
+            color: #667eea;
+        }
+
+        .score-item .score-value {
+            font-size: 18px;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .flag-btn {
+            background: none;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #6c757d;
+        }
+
+        .flag-btn:hover {
+            border-color: #ffc107;
+            background: #fff8e1;
+            color: #e65100;
+        }
+
+        .flag-btn.flagged {
+            border-color: #ffc107;
+            background: #fff8e1;
+            color: #e65100;
+        }
+
+        .flag-icon {
+            font-size: 16px;
+        }
+
+        .controls-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .control-btn {
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .control-btn.reset {
+            background: #dc3545;
+            color: white;
+        }
+
+        .control-btn.reset:hover {
+            background: #c82333;
+        }
+
+        .control-btn.flagged-filter {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .control-btn.flagged-filter:hover {
+            background: #e0a800;
+        }
+
+        .control-btn.flagged-filter.active {
+            background: #e65100;
+            color: white;
+        }
+
+        .control-btn.export {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .control-btn.export:hover {
+            background: #138496;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.hidden {
+            display: none;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .modal textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: flex-end;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .modal-btn.copy {
+            background: #667eea;
+            color: white;
+        }
+
+        .modal-btn.close {
+            background: #6c757d;
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .exam-container {
                 padding: 20px;
@@ -179,13 +370,65 @@
                 padding: 10px 20px;
                 font-size: 14px;
             }
+
+            .score-bar {
+                gap: 12px;
+                padding: 12px 15px;
+            }
+
+            .score-item {
+                font-size: 12px;
+            }
+
+            .score-item .score-value {
+                font-size: 16px;
+            }
+
+            .header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .controls-bar {
+                width: 100%;
+            }
+
+            .control-btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .modal {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="exam-container">
         <div class="question-header">
-            <div class="question-number">Question <span id="current-question">1</span> of <span id="total-questions">93</span></div>
+            <div class="header-row">
+                <div class="question-number">Question <span id="current-question">1</span> of <span id="total-questions">93</span></div>
+                <button class="flag-btn" id="flag-btn" onclick="toggleFlag()">
+                    <span class="flag-icon">⚑</span>
+                    <span id="flag-text">Flag</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="score-bar">
+            <div class="score-item correct-score">
+                <span>Correct:</span>
+                <span class="score-value" id="correct-count">0</span>
+            </div>
+            <div class="score-item incorrect-score">
+                <span>Wrong:</span>
+                <span class="score-value" id="incorrect-count">0</span>
+            </div>
+            <div class="score-item percentage-score">
+                <span>Score:</span>
+                <span class="score-value" id="percentage">0%</span>
+            </div>
         </div>
         
         <div class="question-content">
@@ -197,6 +440,24 @@
         <div class="navigation">
             <button class="nav-button prev" id="prev-btn" onclick="previousQuestion()">Previous</button>
             <button class="nav-button" id="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+
+        <div class="controls-bar">
+            <button class="control-btn flagged-filter" id="flagged-filter-btn" onclick="toggleFlaggedFilter()">View Flagged (<span id="flagged-count">0</span>)</button>
+            <button class="control-btn export" onclick="exportFlagged()">Export Flagged</button>
+            <button class="control-btn reset" onclick="resetProgress()">Reset Progress</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="export-modal">
+        <div class="modal">
+            <h3>Flagged Questions</h3>
+            <p style="margin-bottom: 10px; color: #666; font-size: 14px;">Copy this list to report potentially incorrect questions:</p>
+            <textarea id="flagged-list" readonly></textarea>
+            <div class="modal-buttons">
+                <button class="modal-btn copy" onclick="copyFlagged()">Copy to Clipboard</button>
+                <button class="modal-btn close" onclick="closeModal()">Close</button>
+            </div>
         </div>
     </div>
 
@@ -384,16 +645,16 @@
                 choices: ["1/3", "2/3", "1/5", "1/9"]
             },
             {
-                question: "In the Hardy-Weinberg equation (), which term represents the frequency of asymptomatic carriers in an autosomal recessive condition?",
-                choices: ["", "", "", ""]
+                question: "In the Hardy-Weinberg equation (p² + 2pq + q² = 1), which term represents the frequency of asymptomatic carriers in an autosomal recessive condition?",
+                choices: ["p²", "2pq", "q²", "pq"]
             },
             {
-                question: "The carrier frequency for Cystic Fibrosis (CF) in a specific population is . If a woman from this population is a known carrier and her partner is of the same ancestry with no family history of CF, what is the risk that their first child will be affected?",
-                choices: ["", "", "", ""]
+                question: "The carrier frequency for Cystic Fibrosis (CF) in a specific population is 1/25. If a woman from this population is a known carrier and her partner is of the same ancestry with no family history of CF, what is the risk that their first child will be affected?",
+                choices: ["1/50", "1/100", "1/200", "1/400"]
             },
             {
                 question: "An unaffected woman has a brother with an autosomal recessive condition. She undergoes carrier testing with a test that has a 90% sensitivity (detection rate). Her results are negative. What is her posterior probability of being a carrier?",
-                choices: ["", "", "", ""]
+                choices: ["1/3", "1/6", "1/13", "2/15"]
             },
             {
                 question: "Which term defines the probability that an individual is a carrier of a genetic condition after receiving a negative screening test result, based on the test's sensitivity and the prior carrier frequency?",
@@ -784,8 +1045,8 @@
                 choices: ["Genetic drift", "Founder effect", "Assortative mating", "Balancing selection"]
             },
             {
-                question: "In a certain population, the incidence of an autosomal recessive condition is . According to Hardy-Weinberg equilibrium, what is the carrier frequency ()?",
-                choices: ["", "", "", ""]
+                question: "In a certain population, the incidence of an autosomal recessive condition is 1/2500. According to Hardy-Weinberg equilibrium, what is the carrier frequency (2pq)?",
+                choices: ["1/25", "1/50", "1/100", "1/2500"]
             },
             {
                 question: "Sickle Cell Anemia persists at high frequencies in certain populations because carriers have a survival advantage against malaria. This is an example of which population genetics concept, and how does it affect the allele frequency over time?",
@@ -974,8 +1235,116 @@
             "Under the Common Rule, if data is fully de-identified and the researcher cannot readily ascertain the identity of the subjects, the project may not meet the definition of \"Human Subjects Research\" or may be exempt from full review."
         ];
 
+        const STORAGE_KEY = 'abgc_exam_state';
+
         let currentQuestionIndex = 0;
         let selectedAnswers = {};
+        let flaggedQuestions = new Set();
+        let showFlaggedOnly = false;
+        let filteredIndices = [];
+
+        function loadState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const state = JSON.parse(saved);
+                    currentQuestionIndex = state.currentQuestionIndex || 0;
+                    selectedAnswers = state.selectedAnswers || {};
+                    flaggedQuestions = new Set(state.flaggedQuestions || []);
+                }
+            } catch (e) {
+                console.error('Error loading state:', e);
+            }
+        }
+
+        function saveState() {
+            try {
+                const state = {
+                    currentQuestionIndex,
+                    selectedAnswers,
+                    flaggedQuestions: Array.from(flaggedQuestions)
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            } catch (e) {
+                console.error('Error saving state:', e);
+            }
+        }
+
+        function calculateScore() {
+            let correct = 0;
+            let incorrect = 0;
+            for (const [index, answer] of Object.entries(selectedAnswers)) {
+                if (answer === correctAnswers[parseInt(index)]) {
+                    correct++;
+                } else {
+                    incorrect++;
+                }
+            }
+            const total = correct + incorrect;
+            const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+            return { correct, incorrect, percentage };
+        }
+
+        function updateScoreDisplay() {
+            const { correct, incorrect, percentage } = calculateScore();
+            document.getElementById('correct-count').textContent = correct;
+            document.getElementById('incorrect-count').textContent = incorrect;
+            document.getElementById('percentage').textContent = percentage + '%';
+            document.getElementById('flagged-count').textContent = flaggedQuestions.size;
+        }
+
+        function updateFlagButton() {
+            const flagBtn = document.getElementById('flag-btn');
+            const flagText = document.getElementById('flag-text');
+            const isFlagged = flaggedQuestions.has(currentQuestionIndex);
+            
+            if (isFlagged) {
+                flagBtn.classList.add('flagged');
+                flagText.textContent = 'Flagged';
+            } else {
+                flagBtn.classList.remove('flagged');
+                flagText.textContent = 'Flag';
+            }
+        }
+
+        function toggleFlag() {
+            if (flaggedQuestions.has(currentQuestionIndex)) {
+                flaggedQuestions.delete(currentQuestionIndex);
+            } else {
+                flaggedQuestions.add(currentQuestionIndex);
+            }
+            updateFlagButton();
+            updateScoreDisplay();
+            saveState();
+        }
+
+        function toggleFlaggedFilter() {
+            showFlaggedOnly = !showFlaggedOnly;
+            const btn = document.getElementById('flagged-filter-btn');
+            
+            if (showFlaggedOnly) {
+                btn.classList.add('active');
+                filteredIndices = Array.from(flaggedQuestions).sort((a, b) => a - b);
+                if (filteredIndices.length > 0) {
+                    currentQuestionIndex = filteredIndices[0];
+                } else {
+                    showFlaggedOnly = false;
+                    btn.classList.remove('active');
+                    alert('No flagged questions to show.');
+                    return;
+                }
+            } else {
+                btn.classList.remove('active');
+            }
+            displayQuestion();
+        }
+
+        function getNavigationIndices() {
+            if (showFlaggedOnly && filteredIndices.length > 0) {
+                return filteredIndices;
+            }
+            return Array.from({ length: questions.length }, (_, i) => i);
+        }
 
         function displayQuestion() {
             const question = questions[currentQuestionIndex];
@@ -984,8 +1353,13 @@
             const explanation = explanations[currentQuestionIndex];
 
             document.getElementById('question-text').textContent = question.question;
-            document.getElementById('current-question').textContent = currentQuestionIndex + 1;
-            document.getElementById('total-questions').textContent = questions.length;
+            
+            const navIndices = getNavigationIndices();
+            const positionInNav = navIndices.indexOf(currentQuestionIndex) + 1;
+            const totalInNav = navIndices.length;
+            
+            document.getElementById('current-question').textContent = positionInNav;
+            document.getElementById('total-questions').textContent = totalInNav;
 
             const choicesContainer = document.getElementById('choices');
             choicesContainer.innerHTML = '';
@@ -1021,39 +1395,102 @@
                 explanationDiv.classList.remove('show');
             }
 
-            document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
-            document.getElementById('next-btn').disabled = currentQuestionIndex === questions.length - 1;
+            const navIndicesArr = getNavigationIndices();
+            const currentPos = navIndicesArr.indexOf(currentQuestionIndex);
+            document.getElementById('prev-btn').disabled = currentPos === 0;
+            document.getElementById('next-btn').disabled = currentPos === navIndicesArr.length - 1;
+            
+            updateFlagButton();
+            updateScoreDisplay();
         }
 
         function selectChoice(index) {
-            selectedAnswers[currentQuestionIndex] = index;
-            displayQuestion();
+            if (selectedAnswers[currentQuestionIndex] === undefined) {
+                selectedAnswers[currentQuestionIndex] = index;
+                saveState();
+                displayQuestion();
+            }
         }
 
         function nextQuestion() {
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
+            const navIndices = getNavigationIndices();
+            const currentPos = navIndices.indexOf(currentQuestionIndex);
+            if (currentPos < navIndices.length - 1) {
+                currentQuestionIndex = navIndices[currentPos + 1];
+                saveState();
                 displayQuestion();
             }
         }
 
         function previousQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
+            const navIndices = getNavigationIndices();
+            const currentPos = navIndices.indexOf(currentQuestionIndex);
+            if (currentPos > 0) {
+                currentQuestionIndex = navIndices[currentPos - 1];
+                saveState();
                 displayQuestion();
             }
         }
 
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This will clear your answers, score, and flagged questions.')) {
+                currentQuestionIndex = 0;
+                selectedAnswers = {};
+                flaggedQuestions = new Set();
+                showFlaggedOnly = false;
+                document.getElementById('flagged-filter-btn').classList.remove('active');
+                localStorage.removeItem(STORAGE_KEY);
+                displayQuestion();
+            }
+        }
+
+        function exportFlagged() {
+            const modal = document.getElementById('export-modal');
+            const textarea = document.getElementById('flagged-list');
+            
+            if (flaggedQuestions.size === 0) {
+                textarea.value = 'No questions have been flagged.';
+            } else {
+                const sorted = Array.from(flaggedQuestions).sort((a, b) => a - b);
+                const lines = sorted.map(idx => {
+                    const qNum = idx + 1;
+                    const qText = questions[idx].question.substring(0, 80);
+                    return `Q${qNum}: ${qText}...`;
+                });
+                textarea.value = `Flagged Questions (${flaggedQuestions.size} total):\n\n${lines.join('\n')}`;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function copyFlagged() {
+            const textarea = document.getElementById('flagged-list');
+            textarea.select();
+            document.execCommand('copy');
+            alert('Copied to clipboard!');
+        }
+
+        function closeModal() {
+            document.getElementById('export-modal').classList.add('hidden');
+        }
+
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && currentQuestionIndex > 0) {
-                previousQuestion();
-            } else if (e.key === 'ArrowRight' && currentQuestionIndex < questions.length - 1) {
-                nextQuestion();
-            } else if (e.key >= '1' && e.key <= '4') {
-                selectChoice(parseInt(e.key) - 1);
+            if (document.getElementById('export-modal').classList.contains('hidden')) {
+                if (e.key === 'ArrowLeft') {
+                    previousQuestion();
+                } else if (e.key === 'ArrowRight') {
+                    nextQuestion();
+                } else if (e.key >= '1' && e.key <= '4' && selectedAnswers[currentQuestionIndex] === undefined) {
+                    selectChoice(parseInt(e.key) - 1);
+                } else if (e.key === 'f' || e.key === 'F') {
+                    toggleFlag();
+                }
+            } else if (e.key === 'Escape') {
+                closeModal();
             }
         });
 
+        loadState();
         displayQuestion();
     </script>
 </body>
