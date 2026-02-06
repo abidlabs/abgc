@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABGC Practice Exam (93 Questions)</title>
+    <title>ABGC Practice Exam (165 Questions)</title>
     <style>
         * {
             margin: 0;
@@ -408,7 +408,7 @@
     <div class="exam-container">
         <div class="question-header">
             <div class="header-row">
-                <div class="question-number">Question <span id="current-question">1</span> of <span id="total-questions">93</span></div>
+                <div class="question-number">Question <span id="current-question">1</span> of <span id="total-questions">165</span></div>
                 <button class="flag-btn" id="flag-btn" onclick="toggleFlag()">
                     <span class="flag-icon">⚑</span>
                     <span id="flag-text">Flag</span>
@@ -462,16 +462,1725 @@
     </div>
 
     <script>
-        const questions = Array.from({ length: 93 }, () => ({
-            question: "",
-            choices: ["", "", "", ""]
-        }));
+        const questions = [
+            {
+                question: "A pregnant woman receives cfDNA screening showing elevated risk for Trisomy 18. Which ultrasound finding would best support this screening result?",
+                choices: [
+                    "Clenched hands with overlapping fingers",
+                    "Choroid plexus cysts alone",
+                    "Single umbilical artery",
+                    "Mild pyelectasis"
+                ]
+            },
+            {
+                question: "While reviewing a three-generation pedigree, you observe that the condition appears only in individuals descended from affected mothers—no affected fathers have transmitted the trait to their children. Males and females are equally affected. What inheritance pattern best explains this?",
+                choices: [
+                    "X-linked dominant",
+                    "Autosomal dominant with incomplete penetrance",
+                    "Mitochondrial",
+                    "Autosomal recessive"
+                ]
+            },
+            {
+                question: "A woman tests positive as a spinal muscular atrophy (SMA) carrier. Her partner's carrier screening is negative, leaving him with a residual carrier risk of 1/500. What is this couple's chance of having a child affected with SMA?",
+                choices: [
+                    "1/500",
+                    "1/1000",
+                    "1/2000",
+                    "1/4000"
+                ]
+            },
+            {
+                question: "Jasmine's sibling is affected with sickle cell disease and confirmed to be homozygous for HbS. Jasmine underwent carrier testing, which came back negative. Her partner, who has no family history of hemoglobinopathies, also tested negative. In their population, the carrier frequency is 1 in 12, and the test detects 99% of mutations. What is Jasmine's risk of having an affected child?",
+                choices: [
+                    "1/96",
+                    "1/4704",
+                    "1/2352",
+                    "1/9408"
+                ]
+            },
+            {
+                question: "An individual with genetically confirmed Usher syndrome type 1, an autosomal recessive condition, asks about risks to future children. What is the probability their offspring will also have Usher syndrome type 1?",
+                choices: [
+                    "<1%",
+                    "25%",
+                    "50%",
+                    "100%"
+                ]
+            },
+            {
+                question: "Which term refers to how accurately a genetic test detects the presence or absence of a specific variant in a sample?",
+                choices: [
+                    "Clinical utility",
+                    "Clinical validity",
+                    "Analytical validity",
+                    "Analytical sensitivity"
+                ]
+            },
+            {
+                question: "After learning her husband has Huntington disease, a woman has been researching the condition extensively and joined a caregiver support network. She tells you, 'Now I feel equipped to help him through this.' Which coping strategy is she demonstrating?",
+                choices: [
+                    "Denial",
+                    "Problem-focused coping",
+                    "Emotional avoidance",
+                    "Regression"
+                ]
+            },
+            {
+                question: "A genetic counselor works in a state that does not require licensure but wishes to offer telehealth services to patients residing in states with licensure laws. What is the most accurate statement about this situation?",
+                choices: [
+                    "The counselor may practice without restrictions since their home state has no licensure requirement",
+                    "The counselor must hold a license in each state where patients are physically located during sessions",
+                    "Registration with ABGC alone is sufficient for interstate telehealth practice",
+                    "Telehealth genetic counseling is not subject to state licensure rules"
+                ]
+            },
+            {
+                question: "What is considered the most critical activity for genetic counselors to maintain professional competency following graduation from their training program?",
+                choices: [
+                    "Publishing original research in peer-reviewed journals",
+                    "Pursuing additional advanced degrees",
+                    "Participating in continuing education activities",
+                    "Providing supervision to genetic counseling students"
+                ]
+            },
+            {
+                question: "A pregnant woman reports taking lithium throughout her first trimester to manage bipolar disorder. During which gestational period would this exposure pose the greatest risk for fetal heart malformations?",
+                choices: [
+                    "Weeks 1-2",
+                    "Weeks 3-8",
+                    "Weeks 12-16",
+                    "Weeks 20-24"
+                ]
+            },
+            {
+                question: "A woman seeks genetic counseling because her husband's ex-partner had a child who died from Duchenne muscular dystrophy. She wants to understand the risk for her current pregnancy. What risk estimate should you provide?",
+                choices: [
+                    "Negligible risk above population",
+                    "25%",
+                    "50%",
+                    "67%"
+                ]
+            },
+            {
+                question: "A woman whose father has Fabry disease is discussing reproductive risks. Beyond the numerical probability of having an affected child, what factor is most likely to shape her perception of that risk?",
+                choices: [
+                    "Her knowledge of available enzyme replacement therapy",
+                    "Her personal experience growing up with her affected father",
+                    "Her understanding of X-linked inheritance patterns",
+                    "Her familiarity with prenatal diagnostic options"
+                ]
+            },
+            {
+                question: "Among the following patients, which one has the highest likelihood of carrying a fetus with Trisomy 18?",
+                choices: [
+                    "28-year-old with an isolated echogenic intracardiac focus and low-risk cfDNA result",
+                    "32-year-old with clenched fetal hands and cardiac defect on ultrasound plus high-risk cfDNA for trisomy 18",
+                    "36-year-old with low-risk quad screen and unremarkable ultrasound findings",
+                    "40-year-old with isolated choroid plexus cysts and low-risk cfDNA result"
+                ]
+            },
+            {
+                question: "A child presents with clinical features consistent with Leigh syndrome, and family history suggests maternal inheritance. Blood-based mitochondrial genome sequencing returns negative. What should you consider when interpreting this result?",
+                choices: [
+                    "Nuclear genes encoding mitochondrial proteins could be responsible",
+                    "Mitochondrial sequencing typically has a high false positive rate",
+                    "Blood samples reliably detect all mtDNA mutations",
+                    "A negative result conclusively excludes mitochondrial disease"
+                ]
+            },
+            {
+                question: "Microarray analysis on tissue from a first-trimester pregnancy loss reveals trisomy 16. What is the most appropriate recommendation for this couple?",
+                choices: [
+                    "Obtain parental karyotypes",
+                    "Suggest IVF with preimplantation genetic testing",
+                    "Explain that trisomy 16 is a frequent cause of early miscarriage and close the case",
+                    "Order exome sequencing on the tissue"
+                ]
+            },
+            {
+                question: "In which family history scenario would Fragile X premutation screening be most warranted?",
+                choices: [
+                    "Paternal grandfather diagnosed with late-onset Parkinson disease",
+                    "Maternal uncle who developed progressive tremor and balance problems in his 60s",
+                    "Sister with polycystic ovarian syndrome",
+                    "Paternal aunt with early-onset cognitive decline"
+                ]
+            },
+            {
+                question: "You are assessing a newborn with Pierre Robin sequence. The infant's father has documented hearing impairment and a high-arched palate. The pedigree pattern suggests autosomal dominant transmission. Which finding in the father would most strongly point toward a syndromic diagnosis?",
+                choices: [
+                    "Nearsightedness requiring glasses",
+                    "Significant joint laxity with elevated Beighton score",
+                    "Multiple cafe-au-lait spots",
+                    "Mild curvature of the spine"
+                ]
+            },
+            {
+                question: "If a prenatal ultrasound reveals an isolated echogenic intracardiac focus, by approximately how much does this increase the baseline risk for Down syndrome?",
+                choices: [
+                    "10-fold",
+                    "2-fold",
+                    "No meaningful increase",
+                    "5-fold"
+                ]
+            },
+            {
+                question: "During a prenatal visit, an 11-week pregnant patient mentions she has been taking methotrexate for autoimmune disease. She asks about potential fetal effects. Which resource would you recommend for information on medication exposures during pregnancy?",
+                choices: [
+                    "GeneReviews",
+                    "MotherToBaby",
+                    "ClinVar",
+                    "OMIM"
+                ]
+            },
+            {
+                question: "Tumor immunohistochemistry reveals absent MSH2 and MSH6 protein expression in a patient's endometrial cancer specimen. What should be recommended next?",
+                choices: [
+                    "KRAS mutation analysis",
+                    "MLH1 promoter methylation testing",
+                    "Germline Lynch syndrome genetic testing",
+                    "BRAF V600E mutation testing"
+                ]
+            },
+            {
+                question: "A 38-year-old pregnant woman conceived using donated oocytes. For calculating her aneuploidy risk, which piece of information is most relevant?",
+                choices: [
+                    "The patient's own age",
+                    "The egg donor's age when eggs were retrieved",
+                    "How many embryos were transferred",
+                    "The sperm provider's age"
+                ]
+            },
+            {
+                question: "A woman completed genetic testing several months ago but has repeatedly cancelled appointments to review her results. This pattern most likely represents which psychological defense mechanism?",
+                choices: [
+                    "Rationalization",
+                    "Avoidance",
+                    "Projection",
+                    "Displacement"
+                ]
+            },
+            {
+                question: "Parents bring their child who has eye colobomas, congenital heart disease, blocked nasal passages, poor growth, and malformed ears. They want to understand recurrence risks. What is the most appropriate diagnostic step?",
+                choices: [
+                    "Chromosomal microarray testing on the child",
+                    "CHD7 gene sequencing on the child",
+                    "Cardiac imaging for both parents",
+                    "Carrier screening panel for both parents"
+                ]
+            },
+            {
+                question: "A microarray report for a child with developmental delays, seizures, unsteady gait, and an unusually cheerful disposition shows a deletion encompassing UBE3A at 15q11.2-q13. What additional testing would be most informative?",
+                choices: [
+                    "Methylation studies to confirm parent of origin",
+                    "UBE3A gene sequencing",
+                    "Parental microarray testing",
+                    "Parental FISH analysis"
+                ]
+            },
+            {
+                question: "A family carries the same NF1 mutation, but manifestations vary widely: one member has extensive neurofibromas and optic pathway tumors, another has only skin findings, and a third has iris nodules with learning differences. This illustrates which genetic concept?",
+                choices: [
+                    "Anticipation",
+                    "Variable expressivity",
+                    "Incomplete penetrance",
+                    "Genetic heterogeneity"
+                ]
+            },
+            {
+                question: "A three-generation family tree reveals multiple cases of breast cancer before age 50, ovarian cancer, pancreatic cancer, and melanoma. Which hereditary syndrome best fits this pattern?",
+                choices: [
+                    "Li-Fraumeni syndrome",
+                    "Lynch syndrome",
+                    "BRCA2-associated hereditary breast and ovarian cancer",
+                    "Cowden syndrome"
+                ]
+            },
+            {
+                question: "Genetic testing in a healthy woman reveals a BRCA1 variant of uncertain significance. Her maternal grandmother died of ovarian cancer, but her 70-year-old mother remains cancer-free. What would be the most helpful next step?",
+                choices: [
+                    "Proceed with risk-reducing surgery given the family history",
+                    "Test the patient's mother to determine if she carries the variant",
+                    "Test the patient's children for the variant",
+                    "Begin enhanced breast surveillance based on the VUS finding"
+                ]
+            },
+            {
+                question: "For patients with psychiatric disorders, pharmacogenomic testing provides the greatest clinical benefit in which situation?",
+                choices: [
+                    "Selecting the single most effective medication",
+                    "Identifying individuals who may require dosage modifications",
+                    "Establishing the genetic basis of the psychiatric condition",
+                    "Avoiding all trial-and-error prescribing"
+                ]
+            },
+            {
+                question: "In a pedigree, an affected man transmits the condition to both sons and daughters. His affected daughters have children who are both affected and unaffected. No unaffected person has affected offspring. What inheritance pattern does this suggest?",
+                choices: [
+                    "X-linked recessive",
+                    "Autosomal dominant",
+                    "X-linked dominant",
+                    "Mitochondrial"
+                ]
+            },
+            {
+                question: "A woman planning pregnancy has a sister affected with Becker muscular dystrophy. Their mother is a confirmed carrier of the familial DMD gene variant. The patient herself has not been tested. What is her carrier probability?",
+                choices: [
+                    "50%",
+                    "25%",
+                    "She is definitely a carrier",
+                    "Same as the general population"
+                ]
+            },
+            {
+                question: "A carrier screening panel for Tay-Sachs disease detects 94% of mutations in the Ashkenazi Jewish population, where the carrier rate is 1 in 30. If someone from this population screens negative, what is their remaining carrier risk?",
+                choices: [
+                    "1/250",
+                    "1/500",
+                    "1/100",
+                    "1/750"
+                ]
+            },
+            {
+                question: "A toddler presents with an enlarged liver, low blood sugar, failure to thrive, and abnormally high lactate and uric acid levels. You suspect a glycogen storage disorder. Which initial test would be most helpful?",
+                choices: [
+                    "Muscle biopsy with enzyme assays",
+                    "Liver function panel and lipid profile",
+                    "Urine organic acid analysis",
+                    "Plasma amino acid profile"
+                ]
+            },
+            {
+                question: "NGS testing identifies a BRCA1 frameshift variant in exon 11. What consequence would you expect this to have on the gene product?",
+                choices: [
+                    "An elongated protein with increased activity",
+                    "A truncated nonfunctional protein or transcript degradation via NMD",
+                    "Normal protein function",
+                    "Overexpression of the protein"
+                ]
+            },
+            {
+                question: "Based on tumor sequencing results alone, which patient has the clearest indication for follow-up germline genetic testing?",
+                choices: [
+                    "45-year-old woman with breast cancer harboring a somatic BRCA1 variant",
+                    "70-year-old with lung adenocarcinoma and somatic KRAS mutation",
+                    "65-year-old with colorectal cancer and somatic BRAF V600E variant",
+                    "55-year-old with melanoma and somatic CDKN2A variant"
+                ]
+            },
+            {
+                question: "A woman with confirmed vascular Ehlers-Danlos syndrome (COL3A1 pathogenic variant) wants to discuss pregnancy planning. What is the most critical information to address?",
+                choices: [
+                    "The 25% chance of transmitting the condition",
+                    "The low maternal risk profile during pregnancy",
+                    "Significant pregnancy complications including risk of arterial dissection",
+                    "Contraindications to breastfeeding"
+                ]
+            },
+            {
+                question: "First-trimester ultrasound shows a nuchal translucency of 4.5 mm in a 12-week fetus. What should your counseling emphasize?",
+                choices: [
+                    "This measurement falls within the normal range",
+                    "This finding raises concern for chromosomal conditions and certain genetic syndromes",
+                    "Elevated NT only increases risk for trisomy 21",
+                    "Invasive diagnostic testing should not be offered"
+                ]
+            },
+            {
+                question: "A couple seeks counseling: the woman's brother has Fragile X syndrome, and the man's maternal uncle has FXTAS. For their pregnancy, which condition presents the greatest risk?",
+                choices: [
+                    "Fragile X syndrome",
+                    "Fragile X-associated tremor/ataxia syndrome",
+                    "Fragile X-associated primary ovarian insufficiency",
+                    "Down syndrome"
+                ]
+            },
+            {
+                question: "SNP microarray reveals runs of homozygosity comprising approximately 8% of the genome across several chromosomes. What does this finding most likely indicate?",
+                choices: [
+                    "A new chromosomal deletion",
+                    "Consanguineous parentage",
+                    "Contamination with maternal cells",
+                    "A laboratory artifact"
+                ]
+            },
+            {
+                question: "Prenatal imaging at 20 weeks demonstrates bilaterally enlarged, hyperechoic kidneys without normal corticomedullary distinction, accompanied by reduced amniotic fluid. What diagnosis should be considered?",
+                choices: [
+                    "Posterior urethral valves",
+                    "Autosomal recessive polycystic kidney disease",
+                    "Multicystic dysplastic kidney",
+                    "Bilateral renal agenesis"
+                ]
+            },
+            {
+                question: "A newborn presents with hypoplastic left heart syndrome, peripheral edema, and webbing of the neck. What test should be ordered first?",
+                choices: [
+                    "Echocardiogram",
+                    "Chromosomal microarray",
+                    "Karyotype",
+                    "Noonan syndrome gene panel"
+                ]
+            },
+            {
+                question: "A term infant is large for gestational age with an enlarged tongue, abdominal wall defect, and characteristic ear creases. Testing confirms IC2 hypomethylation at 11p15. What surveillance measure is essential to discuss?",
+                choices: [
+                    "Yearly cardiac ultrasound",
+                    "Regular abdominal imaging for tumor screening",
+                    "Annual thyroid hormone levels",
+                    "Serial brain MRI studies"
+                ]
+            },
+            {
+                question: "Cell-free DNA screening at 10 weeks returns as inconclusive for a pregnant woman with BMI of 42. What is the most probable explanation?",
+                choices: [
+                    "Testing performed at too early a gestational age",
+                    "Insufficient fetal fraction due to elevated maternal BMI",
+                    "Sample processing error",
+                    "Presence of fetal chromosome abnormality"
+                ]
+            },
+            {
+                question: "Before ordering a cardiomyopathy gene panel for a patient whose father died suddenly at 35 from HCM, which topic is most essential to cover during pretest counseling?",
+                choices: [
+                    "Which laboratory will process the specimen",
+                    "The likelihood of receiving a variant of uncertain significance",
+                    "Expenses related to family member testing",
+                    "Expected time frame for receiving results"
+                ]
+            },
+            {
+                question: "You are calling to share confirmed monosomy X results from amniocentesis. The patient's partner answers and requests the information. How should you respond?",
+                choices: [
+                    "Share the results since the partner is involved in the pregnancy",
+                    "Ask the partner to have the patient return your call",
+                    "Release results through the electronic health portal",
+                    "Explain that patient authorization is required before disclosing results"
+                ]
+            },
+            {
+                question: "What genetic workup is most appropriate for an infant born with atypical genitalia, urethral abnormality, and undescended testes bilaterally?",
+                choices: [
+                    "Methylation testing for 15q11-q13",
+                    "SRY analysis combined with chromosome studies",
+                    "Microarray testing alone",
+                    "Whole exome analysis"
+                ]
+            },
+            {
+                question: "Which single test can detect both Prader-Willi and Angelman syndromes when caused by 15q11-q13 deletions?",
+                choices: [
+                    "UBE3A gene sequencing",
+                    "SNRPN gene sequencing",
+                    "Fluorescence in situ hybridization for 15q11-q13",
+                    "Whole exome sequencing"
+                ]
+            },
+            {
+                question: "Newborn screening identifies phenylketonuria in an infant. What treatment must be started without delay?",
+                choices: [
+                    "Enzyme replacement infusions",
+                    "Dietary restriction of phenylalanine",
+                    "Referral for gene therapy evaluation",
+                    "Assessment for liver transplantation"
+                ]
+            },
+            {
+                question: "A pregnant woman with antiphospholipid syndrome mentions that her sister has SLE and her mother has Sjögren syndrome. What point should be emphasized in counseling?",
+                choices: [
+                    "Increased pregnancy risks including thrombosis and recurrent loss",
+                    "Autoimmune conditions follow predictable single-gene inheritance",
+                    "Molecular testing can pinpoint the responsible gene",
+                    "Each child faces a 50% chance of inheriting the exact condition"
+                ]
+            },
+            {
+                question: "If an autosomal recessive disorder occurs in 1 per 10,000 births, what proportion of the population are carriers?",
+                choices: [
+                    "1/50",
+                    "1/100",
+                    "1/200",
+                    "1/500"
+                ]
+            },
+            {
+                question: "A 50-year-old Ashkenazi Jewish woman had breast cancer at 45. Her paternal aunt with ovarian cancer carries BRCA1 c.68_69delAG. What testing approach is recommended?",
+                choices: [
+                    "Test only for the known familial variant",
+                    "Screen for the three Ashkenazi Jewish founder mutations",
+                    "Order comprehensive multigene hereditary cancer panel",
+                    "Testing is unnecessary given paternal-side inheritance"
+                ]
+            },
+            {
+                question: "A woman's maternal aunt had DMD. The patient has a healthy 10-year-old boy. What is her probability of being a DMD carrier?",
+                choices: [
+                    "1/2",
+                    "1/4",
+                    "1/8",
+                    "1/16"
+                ]
+            },
+            {
+                question: "Which pair has the highest likelihood of having a child with beta-thalassemia major?",
+                choices: [
+                    "Northern European couple with normal hemoglobin studies",
+                    "Mediterranean couple who both show elevated HbA2 on electrophoresis",
+                    "African-ancestry man with sickle trait and Asian-ancestry woman with unknown status",
+                    "Southeast Asian couple with microcytosis and adequate iron stores"
+                ]
+            },
+            {
+                question: "Attached earlobes are a recessive trait. In a sample of 400 people, 64 have attached earlobes. What percentage of this population would you expect to be heterozygous?",
+                choices: [
+                    "16%",
+                    "32%",
+                    "48%",
+                    "64%"
+                ]
+            },
+            {
+                question: "The male partner in a couple is a known beta-thalassemia carrier. His pregnant partner has low MCV with normal iron parameters. What test would best clarify her status?",
+                choices: [
+                    "Complete blood count with differential",
+                    "Hemoglobin electrophoresis",
+                    "Serum ferritin measurement",
+                    "Blood smear examination"
+                ]
+            },
+            {
+                question: "cfDNA screening flags increased risk for 22q11.2 deletion syndrome. What is the most critical point to convey to the patient?",
+                choices: [
+                    "cfDNA has excellent positive predictive value for microdeletions",
+                    "This screening result provides a definitive diagnosis",
+                    "The low PPV for microdeletions means diagnostic confirmation is necessary",
+                    "Pregnancy termination should proceed immediately"
+                ]
+            },
+            {
+                question: "A child has seizures, cognitive delays, and depigmented skin patches. When discussing genetic testing, what is most important to mention?",
+                choices: [
+                    "Testing will guide anti-seizure medication selection",
+                    "A positive result would prompt surveillance of additional organ systems",
+                    "Negative results would definitively exclude the suspected diagnosis",
+                    "Clinical features alone are sufficient; testing adds no value"
+                ]
+            },
+            {
+                question: "A child presents with exercise intolerance, proximal weakness, and hyperlactatemia. Muscle biopsy reveals cytochrome c oxidase deficiency. What testing approach is most appropriate?",
+                choices: [
+                    "Chromosomal microarray",
+                    "Targeted single-gene sequencing",
+                    "Combined mitochondrial DNA and nuclear mito-gene panel testing",
+                    "Whole genome sequencing as the sole test"
+                ]
+            },
+            {
+                question: "Test results confirm a hereditary cancer syndrome in an adult patient who cannot be reached by phone or certified mail. What is the appropriate course of action?",
+                choices: [
+                    "Notify the emergency contact to relay results",
+                    "Record all contact attempts and discuss options with the clinical team",
+                    "Close the case after documenting outreach efforts",
+                    "Contact the patient through their workplace"
+                ]
+            },
+            {
+                question: "A woman requests BRCA1 presymptomatic testing shortly after her mother died from ovarian cancer. She is visibly distraught. What is the best approach?",
+                choices: [
+                    "Move forward with testing given the importance of early detection",
+                    "Decline testing and transfer care to a colleague",
+                    "Recognize her grief and collaboratively assess readiness for testing",
+                    "Proceed because her distress may stem from cancer worry"
+                ]
+            },
+            {
+                question: "A patient with high-risk NIPT for trisomy 21 expresses reluctance about diagnostic procedures, saying she won't do anything that might harm her baby. What should you do next?",
+                choices: [
+                    "Emphasize the minimal procedure-related miscarriage risk",
+                    "Assess her current understanding of available diagnostic options",
+                    "Offer educational brochures about amniocentesis",
+                    "Arrange an amniocentesis appointment"
+                ]
+            },
+            {
+                question: "A patient living in a rural area with limited specialist access receives an MSH6 VUS result. What is the most appropriate follow-up?",
+                choices: [
+                    "Initiate yearly colonoscopies per Lynch syndrome protocol",
+                    "Schedule a telehealth visit to review findings and plan care",
+                    "Discharge the patient given the inconclusive result",
+                    "Advise genetic testing for all first-degree relatives"
+                ]
+            },
+            {
+                question: "What approach works best when counseling someone with limited health literacy?",
+                choices: [
+                    "Supply comprehensive written information using standard medical terms",
+                    "Incorporate visual tools and verify comprehension using teach-back",
+                    "Speak faster to ensure all topics are covered",
+                    "Omit discussion of risks to minimize confusion"
+                ]
+            },
+            {
+                question: "At the start of a Tay-Sachs carrier testing appointment, the counselor tells the patient they have 45 minutes together. Stating the session length exemplifies which counseling component?",
+                choices: [
+                    "Informed consent",
+                    "Contracting",
+                    "Risk assessment",
+                    "Psychosocial assessment"
+                ]
+            },
+            {
+                question: "Which activity falls outside a genetic counselor's professional scope when providing pharmacogenomic services?",
+                choices: [
+                    "Describing how genetic variants influence medication processing",
+                    "Reviewing pros and cons of pharmacogenomic testing",
+                    "Writing prescriptions for alternative drugs based on results",
+                    "Communicating results to the treating physician"
+                ]
+            },
+            {
+                question: "A 58-year-old without family cancer history has MSI-high colon cancer. MLH1 methylation testing is positive, and germline testing shows no pathogenic variants. What best explains these findings?",
+                choices: [
+                    "Lynch syndrome with an undetected mutation",
+                    "Sporadic tumor caused by somatic MLH1 silencing",
+                    "False positive MSI result",
+                    "Need for repeat germline analysis"
+                ]
+            },
+            {
+                question: "Parents learn at 22 weeks that their fetus has a major cardiac malformation. They feel overwhelmed. What should be your first recommendation?",
+                choices: [
+                    "Arrange a palliative care consultation",
+                    "Set up a meeting with pediatric cardiology",
+                    "Provide reading materials about the defect",
+                    "Order genetic testing right away"
+                ]
+            },
+            {
+                question: "What is the fundamental purpose of an Institutional Review Board?",
+                choices: [
+                    "Securing financial support for research",
+                    "Ensuring studies appear in respected publications",
+                    "Safeguarding the rights and welfare of research subjects",
+                    "Confirming accuracy of research conclusions"
+                ]
+            },
+            {
+                question: "Second cousins share a grandmother whose son had Tay-Sachs disease. If this couple conceives, what is their risk of having an affected child?",
+                choices: [
+                    "1/144",
+                    "1/72",
+                    "1/36",
+                    "1/16"
+                ]
+            },
+            {
+                question: "A child carries a 22q11.2 microdeletion. What cardiac finding is most commonly associated with this diagnosis?",
+                choices: [
+                    "Hypertrophic cardiomyopathy",
+                    "Conotruncal malformations like tetralogy of Fallot",
+                    "Long QT syndrome",
+                    "Mitral valve prolapse"
+                ]
+            },
+            {
+                question: "An infant develops feeding problems, vomiting, jaundice, and liver enlargement after initiating breastfeeding. Newborn screening reveals high galactose levels. What diagnosis is most likely?",
+                choices: [
+                    "Maple syrup urine disease",
+                    "Classic galactosemia",
+                    "Phenylketonuria",
+                    "MCAD deficiency"
+                ]
+            },
+            {
+                question: "Post-test counseling reveals an FMR1 full mutation with 180 CGG repeats. What health concern is most important to address?",
+                choices: [
+                    "Huntington disease risk",
+                    "Intellectual disability and autism spectrum features",
+                    "Hereditary breast cancer susceptibility",
+                    "Lynch syndrome-associated cancers"
+                ]
+            },
+            {
+                question: "A patient with features of Marfan syndrome (lens dislocation, aortic dilation, tall stature) received a bone marrow transplant two years prior. What specimen should be submitted for FBN1 testing?",
+                choices: [
+                    "Peripheral blood",
+                    "Cheek swab",
+                    "Cultured skin fibroblasts",
+                    "Bone marrow sample"
+                ]
+            },
+            {
+                question: "After expanded carrier screening returns negative, what concept is essential to explain during the results discussion?",
+                choices: [
+                    "Positive predictive value",
+                    "Residual carrier risk",
+                    "Analytical sensitivity",
+                    "Negative predictive value"
+                ]
+            },
+            {
+                question: "One parent has cis alpha-thalassemia deletions (--/αα) and the other has trans deletions (-α/-α). What is the probability their child will have Hb Bart's hydrops fetalis?",
+                choices: [
+                    "0%",
+                    "25%",
+                    "50%",
+                    "100%"
+                ]
+            },
+            {
+                question: "What pedigree feature is characteristic of X-linked recessive inheritance?",
+                choices: [
+                    "Higher frequency of affected females than males",
+                    "Father-to-son transmission",
+                    "Affected males born to carrier mothers",
+                    "All daughters of affected males manifest symptoms"
+                ]
+            },
+            {
+                question: "Which statement describes a violation of Hardy-Weinberg assumptions?",
+                choices: [
+                    "Individuals mate randomly",
+                    "The mutation rate is zero",
+                    "Population size is very large",
+                    "Certain genotypes have survival advantages"
+                ]
+            },
+            {
+                question: "Microarray testing in a girl with developmental concerns shows a 10 Mb stretch of homozygosity on chromosome 15q but no copy number abnormalities. What follow-up is indicated?",
+                choices: [
+                    "15q11-q13 methylation studies",
+                    "Parental microarray to evaluate for consanguinity or UPD",
+                    "Repeat testing at another lab",
+                    "No additional workup required"
+                ]
+            },
+            {
+                question: "Ultrasound at 18 weeks reveals multiple fractures and bone deformity consistent with lethal OI in a pregnancy to unaffected parents. What recurrence risk should be quoted?",
+                choices: [
+                    "Essentially zero (<1%)",
+                    "2-7% accounting for germline mosaicism",
+                    "25%",
+                    "50%"
+                ]
+            },
+            {
+                question: "Pediatrics requests a genetics consult for a hypotonic male newborn with feeding problems, almond-shaped eyes, and small extremities. What test should be ordered first?",
+                choices: [
+                    "Karyotype",
+                    "15q11-q13 methylation analysis",
+                    "Whole exome sequencing",
+                    "Fragile X DNA testing"
+                ]
+            },
+            {
+                question: "A patient at risk for familial adenomatous polyposis (mother carries APC pathogenic variant) asks about genetic discrimination protections. Which statement is accurate?",
+                choices: [
+                    "GINA prohibits health insurance discrimination based on genetic data",
+                    "GINA covers life and long-term care insurance",
+                    "Insurers must be notified of all genetic test results",
+                    "Employers may mandate genetic testing for employment"
+                ]
+            },
+            {
+                question: "When considering predictive Huntington disease testing for a child, which ethical principle takes precedence?",
+                choices: [
+                    "Justice",
+                    "Autonomy",
+                    "Beneficence",
+                    "Veracity"
+                ]
+            },
+            {
+                question: "High-risk cfDNA results for trisomy 18 need to be communicated, but the patient is unreachable by phone and voicemail is unavailable. What step should follow?",
+                choices: [
+                    "Text the results to the patient",
+                    "Call the listed emergency contact",
+                    "Mail a letter asking the patient to call the office",
+                    "Share results on social media"
+                ]
+            },
+            {
+                question: "A man's father and two siblings died from dilated cardiomyopathy before 50. His genetic panel for cardiomyopathy genes is negative. What guidance is most appropriate?",
+                choices: [
+                    "Inform him his risk is now similar to the general population",
+                    "Recommend he continue regular cardiac surveillance",
+                    "Recommend testing his children immediately",
+                    "Discharge him from cardiac follow-up"
+                ]
+            },
+            {
+                question: "While counseling parents of a child with autism, the mother expresses guilt about possibly causing her child's condition. The counselor, thinking of her own family member with autism, responds, 'You probably wish you had done things differently.' This response exemplifies which phenomenon?",
+                choices: [
+                    "Transference",
+                    "Countertransference",
+                    "Empathy",
+                    "Active listening"
+                ]
+            },
+            {
+                question: "A woman referred for hereditary breast cancer testing says she doesn't want to proceed because learning the results frightens her. After validating her feelings, what should you do next?",
+                choices: [
+                    "Conclude the appointment since she has declined",
+                    "Investigate what aspects of testing concern her most",
+                    "Strongly encourage her to reconsider given the clinical importance",
+                    "Order the test anyway in case she changes her mind later"
+                ]
+            },
+            {
+                question: "How do the medical and psychosocial models of genetic counseling fundamentally differ?",
+                choices: [
+                    "Medical model addresses diagnosis only; psychosocial model ignores medical information",
+                    "Medical model prioritizes information delivery; psychosocial model focuses on adaptation and coping",
+                    "Psychosocial model applies only to mental health genetics",
+                    "Medical model is obsolete in current practice"
+                ]
+            },
+            {
+                question: "A woman has a DMD gene duplication spanning exons 45-50. To clarify the clinical significance, you want to test her brother. Which method is best suited for detecting this type of variant?",
+                choices: [
+                    "Sanger sequencing",
+                    "MLPA",
+                    "Chromosome analysis",
+                    "Southern blotting"
+                ]
+            },
+            {
+                question: "A child with CF is homozygous for F508del. The mother carries F508del, but sequencing of the father's CFTR gene detects no pathogenic variants. What explains this discrepancy?",
+                choices: [
+                    "The father likely has a large deletion or duplication that sequencing cannot detect",
+                    "The child's CF diagnosis is incorrect",
+                    "Non-maternity should be considered",
+                    "Laboratory processing error occurred"
+                ]
+            },
+            {
+                question: "A boy presents with progressive weakness affecting proximal muscles and markedly elevated creatine kinase. Testing reveals a nonsense variant in the DMD gene. What is the most probable diagnosis?",
+                choices: [
+                    "Becker muscular dystrophy",
+                    "Duchenne muscular dystrophy",
+                    "Myotonic dystrophy type 1",
+                    "Limb-girdle muscular dystrophy"
+                ]
+            },
+            {
+                question: "A 48-year-old woman's sister had ovarian cancer at 50 and her mother had breast cancer at 65. Which risk assessment tool is best for estimating her likelihood of carrying a BRCA pathogenic variant?",
+                choices: [
+                    "Gail model",
+                    "Claus model",
+                    "BRCAPRO or Tyrer-Cuzick",
+                    "Framingham Risk Score"
+                ]
+            },
+            {
+                question: "CVS reveals mosaicism for trisomy 2 confined to the placenta. Follow-up amniocentesis shows normal female chromosomes (46,XX). What surveillance is warranted for the remainder of pregnancy?",
+                choices: [
+                    "Standard prenatal care only",
+                    "Serial growth monitoring due to IUGR risk",
+                    "Blood pressure monitoring alone",
+                    "Amniotic fluid assessment only"
+                ]
+            },
+            {
+                question: "First-trimester ultrasound reveals severe limb shortening and chest narrowing in a fetus of average-height, unaffected parents. When the patient asks about survival prospects, what is the best initial response?",
+                choices: [
+                    "Given these findings, survival chances are poor",
+                    "Ultrasound alone cannot predict the outcome",
+                    "I hear how worried you are. Can you share what concerns you most right now?",
+                    "I'll connect you with a parent support network"
+                ]
+            },
+            {
+                question: "After learning she carries a Lynch syndrome gene variant, a woman reports coping by spending quality time with loved ones and writing in a journal. This reflects which coping approach?",
+                choices: [
+                    "Avoidance",
+                    "Emotional processing with social support",
+                    "Denial",
+                    "Intellectualization"
+                ]
+            },
+            {
+                question: "For which couple would IVF with preimplantation genetic testing for a single-gene condition be most appropriate?",
+                choices: [
+                    "Partners with unexplained fertility issues and no known genetic risks",
+                    "A couple in which one partner carries the Huntington disease gene expansion",
+                    "Partners requesting non-medical sex selection",
+                    "A couple who experienced one previous miscarriage"
+                ]
+            },
+            {
+                question: "A patient has had recurrent blood clots and relatives with similar history. What genetic testing would be most appropriate?",
+                choices: [
+                    "Microarray analysis",
+                    "Testing for Factor V Leiden and Prothrombin gene mutations",
+                    "Whole exome sequencing",
+                    "Standard karyotype"
+                ]
+            },
+            {
+                question: "Your institution now offers optical genome mapping. What type of genetic abnormality is this technology especially good at identifying?",
+                choices: [
+                    "Point mutations in exons",
+                    "Small indels below 50 base pairs",
+                    "Balanced translocations and large structural variants",
+                    "Mitochondrial point mutations"
+                ]
+            },
+            {
+                question: "A person is homozygous for an HFE variant linked to hereditary hemochromatosis yet shows normal iron parameters and no symptoms. What genetic concept does this demonstrate?",
+                choices: [
+                    "The variant is actually benign",
+                    "Testing error",
+                    "Reduced penetrance",
+                    "Variable expressivity"
+                ]
+            },
+            {
+                question: "A couple expecting their second child comes for counseling. The father had a VSD repaired in childhood; their first child is healthy and there's no other cardiac history in the family. The mother had gestational diabetes previously. What is the recurrence risk for congenital heart disease?",
+                choices: [
+                    "Under 1%",
+                    "3-5%",
+                    "10-15%",
+                    "25%"
+                ]
+            },
+            {
+                question: "A child has worsening hearing loss with normal thyroid studies. Genetic testing identifies biallelic SLC26A4 pathogenic variants. What imaging study is indicated?",
+                choices: [
+                    "Cardiac MRI",
+                    "Temporal bone imaging to look for enlarged vestibular aqueducts",
+                    "Liver enzyme panel",
+                    "Kidney biopsy"
+                ]
+            },
+            {
+                question: "A young adult has a nodular thyroid and bilateral hearing impairment. Which syndrome is the leading diagnostic consideration?",
+                choices: [
+                    "Waardenburg syndrome",
+                    "Pendred syndrome",
+                    "Usher syndrome",
+                    "Jervell and Lange-Nielsen syndrome"
+                ]
+            },
+            {
+                question: "Prenatal ultrasound shows an AV canal defect, intestinal atresia, and increased nuchal thickness despite low-risk cfDNA results. What test provides the best diagnostic information?",
+                choices: [
+                    "Repeat cfDNA screening",
+                    "Amniocentesis for chromosome analysis or microarray",
+                    "Fetal MRI scan",
+                    "Comprehensive fetal echocardiography"
+                ]
+            },
+            {
+                question: "A 12-week fetus has a cystic hygroma with hydrops. Which statement would be inappropriate during counseling?",
+                choices: [
+                    "Chromosomal abnormalities are more likely with these findings",
+                    "Noonan syndrome and related conditions should be considered",
+                    "These findings often resolve on their own without concern",
+                    "Heart defects may also be present"
+                ]
+            },
+            {
+                question: "Maternal serum screening yields AFP at 2.8 MoM with normal hCG and estriol levels. What condition does this pattern suggest?",
+                choices: [
+                    "Down syndrome",
+                    "Edwards syndrome",
+                    "Open neural tube defect",
+                    "Patau syndrome"
+                ]
+            },
+            {
+                question: "When presented with genetic testing options for her son's speech delay, a mother responds, 'Just tell me what to do.' This reflects which decision-making style?",
+                choices: [
+                    "Autonomous",
+                    "Intuitive",
+                    "Dependent",
+                    "Analytical"
+                ]
+            },
+            {
+                question: "An asymptomatic patient with unremarkable family history requests comprehensive genomic testing 'to know everything.' What is the appropriate counselor response?",
+                choices: [
+                    "Proceed with ordering since the patient asked for it",
+                    "Decline because there is no clinical indication",
+                    "Discuss what the patient hopes to learn and clarify testing limitations",
+                    "Redirect to consumer genetic testing services"
+                ]
+            },
+            {
+                question: "A counselor observes that commercially insured patients receive appointments faster than those on Medicaid and brings this to leadership. Which ethical principle does this address?",
+                choices: [
+                    "Autonomy",
+                    "Justice",
+                    "Beneficence",
+                    "Nonmaleficence"
+                ]
+            },
+            {
+                question: "When presenting a case at tumor board, which information is permissible to share under HIPAA regulations?",
+                choices: [
+                    "Patient's birth date",
+                    "Social security number",
+                    "Clinical diagnosis and pertinent medical history",
+                    "Residential address"
+                ]
+            },
+            {
+                question: "In health insurance terminology, what does 'deductible' mean?",
+                choices: [
+                    "The monthly payment for maintaining coverage",
+                    "The amount paid by the patient before insurance coverage activates",
+                    "Cost-sharing after reaching the maximum out-of-pocket limit",
+                    "Fixed fee for seeing a specialist"
+                ]
+            },
+            {
+                question: "IHC on an ovarian tumor from a 60-year-old shows absent MSH2 and MSH6 staining. What is the recommended next step?",
+                choices: [
+                    "Reassure that this is most likely a sporadic finding",
+                    "Request MLH1 methylation analysis",
+                    "Offer germline testing for Lynch syndrome genes",
+                    "Limit testing to BRCA1/2"
+                ]
+            },
+            {
+                question: "Townes-Brocks syndrome was reclassified from an 'association' to a 'syndrome' after SALL1 mutations were discovered. What prompted this terminology change?",
+                choices: [
+                    "The clinical phenotype was revised",
+                    "Case numbers exceeded 100",
+                    "A specific genetic cause was established",
+                    "Environmental factors were excluded"
+                ]
+            },
+            {
+                question: "When limb abnormalities result from interrupted blood supply during development, this represents which category of birth defect?",
+                choices: [
+                    "Malformation",
+                    "Deformation",
+                    "Disruption",
+                    "Dysplasia"
+                ]
+            },
+            {
+                question: "A 14-month-old girl presents with developmental regression, loss of words she previously used, and repetitive hand movements. What clinical feature would most strongly support the suspected diagnosis?",
+                choices: [
+                    "Relatives with autism spectrum disorder",
+                    "A period of typical development before regression began",
+                    "Premature birth",
+                    "Neonatal seizures"
+                ]
+            },
+            {
+                question: "A patient presents with freckling around the lips, intestinal polyps, and a strong family history of early cancers. Which gene is most likely involved?",
+                choices: [
+                    "APC",
+                    "STK11",
+                    "PTEN",
+                    "SMAD4"
+                ]
+            },
+            {
+                question: "Your ethical decision-making process centers on asking what a virtuous person would do. This approach aligns with which ethical tradition?",
+                choices: [
+                    "Utilitarianism",
+                    "Deontology",
+                    "Virtue ethics",
+                    "Principlism"
+                ]
+            },
+            {
+                question: "An investigator wishes to repurpose banked DNA samples from a cardiovascular study for new diabetes research. What approval process applies?",
+                choices: [
+                    "None needed since samples already exist",
+                    "IRB review and approval of an amendment or new protocol",
+                    "Verbal authorization from the original principal investigator",
+                    "Samples may be used automatically if de-identified"
+                ]
+            },
+            {
+                question: "A patient with a hereditary cancer predisposition expresses difficulty adhering to surveillance recommendations due to financial and scheduling constraints. What response is most appropriate?",
+                choices: [
+                    "Stress the critical importance of strict adherence",
+                    "Connect the patient with social work services for resource assistance",
+                    "Advise the patient to skip the recommended screenings",
+                    "Note in the chart that surveillance was declined"
+                ]
+            },
+            {
+                question: "What laboratory test identifies abnormal hemoglobin types like HbS and HbC?",
+                choices: [
+                    "CBC",
+                    "Iron panel",
+                    "Hemoglobin electrophoresis or HPLC",
+                    "Blood smear review"
+                ]
+            },
+            {
+                question: "A child in foster care was tested for OI due to suspected abuse; results are negative. How should you handle results disclosure?",
+                choices: [
+                    "Contact biological parents directly",
+                    "Consult the caseworker about proper disclosure procedures",
+                    "Inform only the foster parents",
+                    "Withhold results until custody is finalized"
+                ]
+            },
+            {
+                question: "In states requiring genetic counselor licensure, what primarily defines the professional scope of practice?",
+                choices: [
+                    "ABGC certification standards",
+                    "Employer-specific guidelines",
+                    "State statutes and regulatory rules",
+                    "ACMG professional recommendations"
+                ]
+            },
+            {
+                question: "A mother with a confirmed BRCA2 pathogenic variant wants both her 8-year-old and 12-year-old daughters tested right away. What is the most appropriate response?",
+                choices: [
+                    "Order testing per maternal request",
+                    "Discuss why predictive testing of minors for adult-onset conditions is generally deferred, and explore her concerns",
+                    "State that pediatric testing is absolutely prohibited",
+                    "Agree to test the older child only since she's closer to adulthood"
+                ]
+            },
+            {
+                question: "Which hemoglobin disorder manifests clinically before birth?",
+                choices: [
+                    "Sickle cell disease",
+                    "Beta-thalassemia major",
+                    "Alpha-thalassemia major (Hb Bart's hydrops fetalis)",
+                    "Hemoglobin C disease"
+                ]
+            },
+            {
+                question: "When seeking insurance pre-authorization for genetic testing, what documentation is typically required?",
+                choices: [
+                    "Procedure codes (CPT) and diagnostic codes (ICD-10)",
+                    "Patient's driver's license",
+                    "Multiple reference letters",
+                    "Counselor's professional credentials"
+                ]
+            },
+            {
+                question: "A 60-year-old man planning to father a child using donor eggs asks about age-related genetic risks. What should be discussed?",
+                choices: [
+                    "Aneuploidy risk comparable to advanced maternal age",
+                    "Elevated risk for de novo autosomal dominant conditions",
+                    "Higher likelihood of mitochondrial disease",
+                    "Paternal age carries no genetic implications"
+                ]
+            },
+            {
+                question: "A patient clinically diagnosed with Long QT syndrome inquires about PGT-M for future pregnancies. What prerequisite must be met?",
+                choices: [
+                    "ECG documentation of prolonged QT interval",
+                    "Identification of the specific pathogenic variant in the patient",
+                    "Prior cardiac ablation procedure",
+                    "Insurance approval only"
+                ]
+            },
+            {
+                question: "A patient presents with drooping eyelids, chronic progressive eye movement limitation, and exercise intolerance. What testing strategy is recommended?",
+                choices: [
+                    "Single-gene analysis of MT-TL1",
+                    "Chromosomal microarray",
+                    "Combined mitochondrial genome sequencing and nuclear mito-gene panel",
+                    "Karyotype"
+                ]
+            },
+            {
+                question: "A pregnant woman reports regular cannabis use during the first trimester. What should counseling focus on?",
+                choices: [
+                    "High probability of structural birth defects",
+                    "Potential associations with reduced birth weight and prematurity",
+                    "Complete absence of documented pregnancy risks",
+                    "Definite intellectual impairment in offspring"
+                ]
+            },
+            {
+                question: "A patient has esophageal malformation, spinal defects, heart anomaly, kidney problems, and limb abnormalities. What additional finding would strengthen the suspected diagnosis?",
+                choices: [
+                    "Extra digits",
+                    "Imperforate anus",
+                    "Cleft lip",
+                    "Craniosynostosis"
+                ]
+            },
+            {
+                question: "A patient receives confirmation of early-onset Parkinson disease and expresses mixed emotions—relief at finally having an explanation and anxiety about what lies ahead. What is the best counselor response?",
+                choices: [
+                    "Emphasize the serious implications to ensure understanding",
+                    "Acknowledge both reactions and ask what kind of support would be most valuable",
+                    "Suggest that relief is inappropriate given the diagnosis",
+                    "Transition immediately to advance care planning"
+                ]
+            },
+            {
+                question: "What best describes proper use of interpreter services in genetic counseling?",
+                choices: [
+                    "Use family members to reduce costs when possible",
+                    "Interpreters are only necessary if patients ask for them",
+                    "Qualified medical interpreters should be available for patients with limited English proficiency",
+                    "Continue using technical vocabulary even with interpreter assistance"
+                ]
+            },
+            {
+                question: "Parents consent to enroll their 6-year-old in a research study, but the child objects to additional blood draws. What is the appropriate action?",
+                choices: [
+                    "Proceed since parental consent has been obtained",
+                    "Convince the child of the study's importance",
+                    "Address the child's reluctance with the parents and reconsider whether enrollment is appropriate",
+                    "Enroll the child and use sedation for sample collection"
+                ]
+            },
+            {
+                question: "Genetic testing costs $1,200. After insurance pays $800, the patient owes $400. What term describes this $400 balance?",
+                choices: [
+                    "Deductible",
+                    "Premium",
+                    "Patient responsibility/coinsurance",
+                    "Copay"
+                ]
+            },
+            {
+                question: "What is the primary criterion for Medicaid eligibility determination?",
+                choices: [
+                    "Employment status exclusively",
+                    "Household income",
+                    "Previous insurance coverage",
+                    "State of residence exclusively"
+                ]
+            },
+            {
+                question: "Pathogenic variants in which gene carry the greatest lifetime prostate cancer risk?",
+                choices: [
+                    "ATM",
+                    "CHEK2",
+                    "BRCA2",
+                    "PALB2"
+                ]
+            },
+            {
+                question: "When is descriptive risk language (like 'elevated' or 'minimal') preferable to providing exact percentages?",
+                choices: [
+                    "When precise numerical estimates exist",
+                    "When counseling someone with a known pathogenic family variant",
+                    "When available data are insufficient to calculate precise figures",
+                    "When the patient asks for specific numbers"
+                ]
+            },
+            {
+                question: "A new patient self-refers to your cardiac genetics clinic without prior records. How should you open the session?",
+                choices: [
+                    "Review all testing options available",
+                    "Inquire what led them to seek genetic counseling",
+                    "Begin collecting a detailed family history immediately",
+                    "Discuss anticipated costs and billing"
+                ]
+            },
+            {
+                question: "A test is billed at $1,500. Insurance allows $900 and covers 80% of that amount. How much does the patient owe?",
+                choices: [
+                    "$180",
+                    "$600",
+                    "$720",
+                    "$300"
+                ]
+            },
+            {
+                question: "Your insurance policy has a $500 deductible and $50 copay per hospitalization. A 3-day hospital stay totals $4,500. With no prior payments toward the deductible, what is your out-of-pocket cost?",
+                choices: [
+                    "$500",
+                    "$550",
+                    "$650",
+                    "$4,500"
+                ]
+            },
+            {
+                question: "A pregnant woman with MSUD is struggling to follow her dietary restrictions. Her partner's carrier screen was negative. What pregnancy risk needs discussion?",
+                choices: [
+                    "25% chance the baby will have MSUD",
+                    "Poor maternal diet likely poses no fetal risk",
+                    "Inadequate metabolic control may cause fetal neurological harm",
+                    "Termination is necessary due to certain fetal damage"
+                ]
+            },
+            {
+                question: "An 8-week pregnant patient has pregestational type 1 diabetes. Which laboratory value best predicts risk for fetal anomalies?",
+                choices: [
+                    "Fasting glucose level",
+                    "HbA1c",
+                    "Oral glucose tolerance test results",
+                    "C-peptide measurement"
+                ]
+            },
+            {
+                question: "Teratogenic exposure during which developmental window poses the greatest risk for major birth defects?",
+                choices: [
+                    "Pre-implantation period (days 1-6)",
+                    "Organogenesis (weeks 3-8)",
+                    "Early fetal period (weeks 9-12)",
+                    "Third trimester"
+                ]
+            },
+            {
+                question: "A 13-week fetus has hydrops with normal CVS karyotype; cfDNA was not done. Testing for which gene should be prioritized?",
+                choices: [
+                    "CFTR",
+                    "Alpha-globin genes (HBA1/HBA2)",
+                    "DMD",
+                    "FGFR3"
+                ]
+            },
+            {
+                question: "A toddler presents with developmental delays, outgoing personality, cardiac issues, and facial features including starburst iris pattern and prominent cheeks. What test is indicated?",
+                choices: [
+                    "Standard karyotype",
+                    "Testing for 7q11.23 deletion (Williams syndrome)",
+                    "Fragile X analysis",
+                    "Whole exome sequencing"
+                ]
+            },
+            {
+                question: "Quad screen results show normal AFP but elevated hCG and inhibin A with slightly reduced estriol. What might ultrasound reveal?",
+                choices: [
+                    "Neural tube defect",
+                    "Findings suggestive of trisomy 21",
+                    "Skeletal abnormalities",
+                    "Completely normal anatomy"
+                ]
+            },
+            {
+                question: "A patient says, 'I can't stop thinking about this Brugada diagnosis.' You respond, 'Can't stop thinking about it?' Which counseling technique is this?",
+                choices: [
+                    "Reflecting content",
+                    "Mirroring",
+                    "Asking an open-ended question",
+                    "Confronting"
+                ]
+            },
+            {
+                question: "A young woman recently diagnosed with mosaic Turner syndrome asks about having children. What is the most accurate information?",
+                choices: [
+                    "Egg donation will definitely be required",
+                    "Natural conception may be possible; referral to reproductive specialists is recommended",
+                    "Pregnancy is contraindicated due to heart risks",
+                    "No individual with Turner syndrome can conceive"
+                ]
+            },
+            {
+                question: "What approach best helps patients remember information from a genetic counseling session?",
+                choices: [
+                    "Delivering all information at the session's end",
+                    "Using technical terminology consistently",
+                    "Structuring content into logical sections and reviewing key takeaways",
+                    "Covering material quickly to include more detail"
+                ]
+            },
+            {
+                question: "A Spanish-speaking family arrives with a friend to interpret because the hospital interpreter is unavailable. What should you do?",
+                choices: [
+                    "Allow the friend to interpret since the family prefers them",
+                    "Arrange for telephone interpreter services",
+                    "Use gestures to communicate without interpretation",
+                    "Cancel and reschedule when the staff interpreter is available"
+                ]
+            },
+            {
+                question: "A couple with two sons seeks PGT-A solely to select for a female embryo. They have no genetic concerns. After establishing the session framework, what comes next?",
+                choices: [
+                    "Fulfill their request immediately",
+                    "Decline services and terminate the consultation",
+                    "Discuss their understanding of PGT-A and explain clinic policies regarding non-medical sex selection",
+                    "File an ethics committee report"
+                ]
+            },
+            {
+                question: "Your plan covers 70% of out-of-network costs. An out-of-network test is billed at $200 but the allowed amount is $100. What do you pay?",
+                choices: [
+                    "$30",
+                    "$60",
+                    "$130",
+                    "$70"
+                ]
+            },
+            {
+                question: "A child with a rare metabolic condition needs assistance with supplies, travel to specialists, and family respite services. Which organization offers the most comprehensive support?",
+                choices: [
+                    "NIH",
+                    "NORD",
+                    "CDC",
+                    "FDA"
+                ]
+            },
+            {
+                question: "At 26 weeks, prenatal diagnosis confirms trisomy 21. The expectant parents feel overwhelmed and want guidance about postnatal care. What resource is most appropriate?",
+                choices: [
+                    "Discussion of pregnancy termination",
+                    "Prenatal consultations with pediatric cardiology and Down syndrome specialists",
+                    "Parental chromosome testing",
+                    "Repeat amniocentesis by MFM"
+                ]
+            },
+            {
+                question: "Which law provides the primary federal framework for protecting human research subjects?",
+                choices: [
+                    "HIPAA",
+                    "The Common Rule (45 CFR 46)",
+                    "GINA",
+                    "ADA"
+                ]
+            },
+            {
+                question: "Which research design typically requires written informed consent from participants?",
+                choices: [
+                    "Retrospective review of de-identified records",
+                    "Use of biobank samples collected under broad consent",
+                    "Interventional clinical trial testing a new medication",
+                    "Anonymous survey research"
+                ]
+            },
+            {
+                question: "The NSGC position on prenatal testing for adult-onset conditions emphasizes which ethical value?",
+                choices: [
+                    "Provider beneficence",
+                    "Protecting the future child's right to make autonomous decisions",
+                    "Equitable healthcare access",
+                    "Parental decision-making rights"
+                ]
+            },
+            {
+                question: "When creating patient education materials about hereditary cancer testing, what approach is most effective?",
+                choices: [
+                    "Detailed instructions for drawing pedigrees",
+                    "Plain language and graphics showing how results guide cancer screening",
+                    "Exhaustive lists of genes and associated risks",
+                    "Descriptions of laboratory techniques"
+                ]
+            },
+            {
+                question: "A pedigree shows unaffected parents with one affected child who has both affected and unaffected offspring in roughly equal proportions. What inheritance pattern fits best?",
+                choices: [
+                    "Autosomal recessive",
+                    "X-linked recessive",
+                    "Autosomal dominant arising from a new mutation",
+                    "Mitochondrial"
+                ]
+            },
+            {
+                question: "An uninsured undocumented patient needs genetic evaluation for a neurological condition. What is the counselor's first step?",
+                choices: [
+                    "Decline to provide services",
+                    "Order the most comprehensive available testing",
+                    "Investigate financial assistance programs, charity care, and disease-specific foundations",
+                    "Transfer care to another facility"
+                ]
+            },
+            {
+                question: "Your clinic is adopting a new genomic data storage system. What security priority is most critical?",
+                choices: [
+                    "Universal staff access to all records",
+                    "Robust encryption and controlled access permissions",
+                    "Selecting the lowest-cost option",
+                    "Public availability of data for research purposes"
+                ]
+            },
+            {
+                question: "Identical female twins could show the greatest phenotypic differences for which condition?",
+                choices: [
+                    "Cystic fibrosis",
+                    "X-linked conditions like DMD due to random X-inactivation",
+                    "Huntington disease",
+                    "Sickle cell disease"
+                ]
+            },
+            {
+                question: "cfDNA results at 14 weeks indicate elevated risk for trisomies 13, 18, and 21 plus additional chromosome abnormalities. What might explain this unusual pattern?",
+                choices: [
+                    "Accurate identification of multiple fetal abnormalities",
+                    "Occult maternal cancer or placental mosaicism",
+                    "Sample contamination",
+                    "Triplet gestation"
+                ]
+            },
+            {
+                question: "A pregnant patient has minimal English skills and elementary-level education. How should you counsel her about prenatal testing?",
+                choices: [
+                    "Give her English consent documents to read",
+                    "Use qualified interpreter services and visual aids with simple explanations",
+                    "Speak slowly and loudly without an interpreter",
+                    "Have a relative explain medical concepts"
+                ]
+            },
+            {
+                question: "Who faces the highest risk of having a chromosomally abnormal child?",
+                choices: [
+                    "40-year-old woman with unremarkable family history",
+                    "35-year-old woman carrying a balanced Robertsonian translocation",
+                    "30-year-old man whose mother had a child with trisomy 21",
+                    "25-year-old woman with one prior early miscarriage"
+                ]
+            },
+            {
+                question: "GINA protections are most relevant to discuss with which patient?",
+                choices: [
+                    "25-year-old already diagnosed with CF",
+                    "45-year-old healthy person considering BRCA testing",
+                    "60-year-old with advanced colon cancer",
+                    "Infant undergoing standard newborn screening"
+                ]
+            },
+            {
+                question: "A patient with severe hemophilia A and affected maternal uncles has negative F8 sequencing and deletion/duplication studies. What test should follow?",
+                choices: [
+                    "Repeat sequencing at another laboratory",
+                    "Inversion analysis for introns 22 and 1",
+                    "Chromosome analysis",
+                    "Factor VIII activity level"
+                ]
+            },
+            {
+                question: "A healthy 55-year-old's brother was diagnosed with Alzheimer disease at 52. What information is most critical to gather first?",
+                choices: [
+                    "The brother's employment history",
+                    "Age of symptom onset and results of any genetic testing in the brother",
+                    "The patient's current blood pressure",
+                    "The patient's lipid levels"
+                ]
+            }
+        ];
 
-        const correctAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        const correctAnswers = [
+            0, 2, 2, 1, 0, 2, 1, 1, 2, 1,
+            0, 1, 1, 0, 2, 1, 1, 1, 2, 2,
+            1, 1, 1, 1, 0, 1, 1, 2, 1, 1,
+            0, 0, 0, 0, 0, 2, 0, 1, 1, 2,
+            2, 1, 1, 3, 1, 2, 1, 0, 0, 0,
+            0, 1, 2, 1, 2, 1, 1, 2, 1, 2,
+            1, 1, 1, 2, 1, 1, 2, 0, 1, 1,
+            1, 2, 1, 0, 2, 3, 1, 1, 1, 0,
+            1, 2, 1, 1, 1, 1, 1, 1, 2, 2,
+            1, 2, 1, 1, 1, 2, 2, 1, 1, 1,
+            1, 2, 2, 2, 2, 1, 2, 1, 2, 2,
+            2, 1, 1, 2, 1, 3, 2, 1, 2, 1,
+            2, 0, 1, 2, 2, 1, 1, 1, 2, 2,
+            1, 1, 2, 2, 1, 0, 2, 0, 1, 1,
+            1, 1, 1, 1, 0, 2, 1, 2, 3, 1,
+            1, 1, 2, 1, 1, 2, 2, 1, 3, 1,
+            1, 1, 1, 1, 1
+        ];
 
-        const explanations = Array.from({ length: 93 }, () => "");
+        const explanations = [
+            "Trisomy 18 is characterized by clenched hands with overlapping fingers (index finger over third, fifth over fourth), along with other findings such as rocker-bottom feet, cardiac defects, and intrauterine growth restriction. Choroid plexus cysts alone are a soft marker with low predictive value.",
+            "Mitochondrial inheritance is characterized by maternal transmission only (mitochondria are inherited exclusively from the mother), affecting both males and females. The key distinguishing feature is that affected fathers do not transmit the condition to any of their children.",
+            "The couple's risk calculation: 1 (known carrier) × 1/500 (partner's residual risk) × 1/4 (chance both pass the mutation) = 1/2000.",
+            "Maria's carrier risk after negative testing: Prior risk 2/3 × 1% false negative = ~1/150. Her husband's risk: 1/12 × 1% = ~1/1200. Combined risk to have affected child = 1/150 × 1/1200 × 1/4 ≈ 1/4704.",
+            "Usher syndrome type 1 is autosomal recessive. For an affected individual to have an affected child, the partner must also be a carrier. Given the rarity of the condition, the chance is very low (<1%), essentially the population carrier frequency × 1/4.",
+            "Analytical validity refers to the technical accuracy of the test - how well it detects the presence or absence of a specific genetic variant. Clinical validity refers to how well the test detects or predicts the clinical condition, while clinical utility refers to whether the information can be used for patient management.",
+            "Problem-focused coping involves taking active steps to manage or address the source of stress. Reading about the condition and joining a support group to become a better advocate are direct, action-oriented strategies.",
+            "State licensure requirements generally require genetic counselors to be licensed in the state where the patient is located at the time of service, regardless of where the counselor practices from.",
+            "Continuing education is essential for maintaining competency in the rapidly evolving field of genetics. The NSGC emphasizes lifelong learning through CE activities to stay current with advances in knowledge and practice.",
+            "The critical period for cardiac development is during the first trimester, particularly weeks 3-8 when organogenesis occurs. Lithium exposure during this window is associated with increased risk for Ebstein anomaly and other cardiac defects.",
+            "DMD is X-linked. The husband's previous partner's affected son inherited the mutation from his mother, not the husband. The current pregnancy has negligible risk above population since the husband cannot be a carrier of an X-linked condition (he would be affected if he had the mutation).",
+            "Beyond numerical risk, a patient's perception of risk is heavily influenced by their lived experience with affected family members. Seeing how the condition impacts their father's daily life shapes their emotional understanding of risk.",
+            "A screen-positive cfDNA result combined with multiple ultrasound findings suggestive of trisomy 18 (clenched hands, heart defect) represents the highest risk scenario among the options presented.",
+            "If mitochondrial DNA sequencing from blood is negative, it's important to consider that mutations may be present in other tissues (heteroplasmy) or that the condition may be caused by nuclear genes encoding mitochondrial proteins.",
+            "Trisomy 16 is the most common autosomal trisomy in early pregnancy losses and is uniformly lethal. It is not associated with parental chromosomal abnormalities and typically occurs sporadically, so the case can be closed with appropriate counseling.",
+            "Fragile X-associated tremor/ataxia syndrome (FXTAS) affects premutation carriers, typically males over age 50, and presents with intention tremor and gait ataxia. A maternal uncle with these symptoms suggests a premutation in the maternal line.",
+            "In a family with suspected autosomal dominant cleft palate/Pierre Robin sequence, joint hypermobility with a high Beighton score would suggest Stickler syndrome, which combines Pierre Robin sequence with connective tissue findings.",
+            "An isolated echogenic intracardiac focus is a soft marker that, when found in isolation, only slightly increases the risk of Down syndrome (approximately 2-fold). It does not significantly change management if other findings are normal.",
+            "MotherToBaby (formerly OTIS) is the authoritative resource for information about exposures during pregnancy, including medications, chemicals, and infections. It provides evidence-based risk information for teratogenic exposures.",
+            "Loss of MSH2 and MSH6 on IHC is not associated with MLH1 promoter hypermethylation (which only affects MLH1). This pattern indicates possible Lynch syndrome, so germline genetic testing is the appropriate next step.",
+            "For aneuploidy risk assessment in IVF pregnancies, the age of the egg source (whether the patient or donor) is the primary determinant of aneuploidy risk, not the gestational carrier's age.",
+            "Repeatedly cancelling appointments to discuss results is characteristic of avoidance, a defense mechanism where the person avoids situations that cause anxiety or distress.",
+            "The combination of coloboma, heart defects, choanal atresia, growth retardation, and ear abnormalities spells CHARGE syndrome. CHD7 gene sequencing is the most appropriate diagnostic test.",
+            "The 15q11.2-q13 deletion involving UBE3A, combined with the clinical features described (happy demeanor, ataxia, seizures), indicates Angelman syndrome. Methylation analysis is needed to determine if this is a deletion, UPD, or imprinting defect.",
+            "Variable expressivity occurs when individuals with the same genetic mutation show different degrees or types of clinical manifestations. All family members have NF1, but with different severity of features.",
+            "BRCA2 mutations are associated with hereditary breast and ovarian cancer syndrome, and also confer increased risk for pancreatic cancer and melanoma, making this pedigree most consistent with BRCA2-related HBOC.",
+            "The most informative testing strategy for a VUS is to test an affected family member. Testing the mother (who is alive and unaffected) could help determine if the variant segregates with disease in the family.",
+            "Pharmacogenomic testing is most useful for guiding medication dosing by identifying how patients metabolize drugs (poor, intermediate, normal, or ultra-rapid metabolizers), rather than predicting drug efficacy.",
+            "This pattern (affected individual with affected offspring of both sexes, where unaffected individuals don't have affected children) is consistent with autosomal dominant inheritance.",
+            "If the mother is confirmed to carry the DMD variant, then the patient (her daughter) has a 50% chance of having inherited it. Carrier testing should be offered.",
+            "Residual risk after negative testing: Prior risk (1/30) × (1 - detection rate) = 1/30 × 6/100 = 1/500, approximately 1/250 when simplified.",
+            "Hepatomegaly, hypoglycemia, growth retardation, and elevated lactate/uric acid are classic features of glycogen storage disease type I (von Gierke disease). Liver function tests and lipid panel help assess the condition.",
+            "A frameshift mutation typically leads to premature stop codon formation and production of a truncated, non-functional protein, or triggers nonsense-mediated decay eliminating the mRNA entirely.",
+            "BRCA1/2 mutations found on tumor sequencing should prompt germline testing to determine if the mutation is inherited. This has implications for the patient's cancer treatment and family members' cancer risk.",
+            "Vascular Ehlers-Danlos syndrome (COL3A1) carries significant maternal risks during pregnancy including arterial rupture, uterine rupture, and other life-threatening complications due to vascular fragility.",
+            "An NT of 4.5 mm is significantly elevated (above the 99th percentile) and is associated with increased risk for chromosomal abnormalities (including trisomies and monosomy X) and genetic syndromes like Noonan syndrome.",
+            "Given the family history of Fragile X syndrome and FXTAS, Fragile X syndrome poses the highest direct risk to the pregnancy if the mother carries a premutation that could expand to a full mutation.",
+            "Long continuous stretches of homozygosity (runs of homozygosity or ROH) distributed across multiple chromosomes totaling 5-10% of the genome suggest parental consanguinity.",
+            "Bilateral echogenic kidneys with oligohydramnios and loss of corticomedullary differentiation is highly suspicious for autosomal recessive polycystic kidney disease (ARPKD).",
+            "Hypoplastic left heart, lymphedema, and webbed neck suggest Turner syndrome (45,X). Karyotype is the appropriate first test to confirm this chromosomal abnormality.",
+            "Beckwith-Wiedemann syndrome with hypomethylation at IC2 is associated with increased risk for embryonal tumors (Wilms tumor, hepatoblastoma). Regular abdominal ultrasound surveillance is recommended.",
+            "High BMI is associated with low fetal fraction on cfDNA screening because the higher maternal blood volume dilutes the proportion of placental-derived cell-free DNA.",
+            "When discussing genetic testing for a condition with significant implications, explaining the possibility of finding a VUS is crucial for informed consent and managing expectations.",
+            "HIPAA and patient confidentiality require that medical information only be disclosed to the patient directly. The partner cannot receive results without the patient's explicit authorization.",
+            "Ambiguous genitalia with hypospadias and bilateral cryptorchidism requires investigation of disorders of sex development. SRY analysis and karyotype help determine genetic sex.",
+            "FISH for the 15q11-q13 region can detect deletions that cause both Prader-Willi and Angelman syndromes, though methylation analysis is more commonly used as it also detects UPD.",
+            "PKU requires immediate dietary intervention with a low phenylalanine diet to prevent irreversible neurological damage and intellectual disability.",
+            "Autoimmune disorders typically have both genetic predisposition (polygenic) and environmental components. Having multiple family members with different autoimmune conditions reflects this complex inheritance pattern.",
+            "Using Hardy-Weinberg: q² = 1/10,000, so q = 1/100. Carrier frequency (2pq) ≈ 2 × 1 × 1/100 = 1/50.",
+            "When a known familial variant exists in the family, testing for that specific variant is the most appropriate and cost-effective first step.",
+            "The patient's maternal aunt has DMD, making the patient's mother an obligate carrier. The patient has a 1/2 chance of being a carrier. Since she has a healthy 10-year-old son, her carrier risk may be modified.",
+            "Couples of Mediterranean ancestry where both have elevated HbA2 (indicating beta-thalassemia trait) are at 25% risk for having a child with beta-thalassemia major.",
+            "Using Hardy-Weinberg: q² = 64/400 = 0.16, so q = 0.4. Heterozygote frequency = 2pq = 2 × 0.6 × 0.4 = 0.48 or 48%.",
+            "Hemoglobin electrophoresis identifies hemoglobin variants and can detect elevated HbA2 (beta-thalassemia trait) or abnormal hemoglobins (HbS, HbC, HbE).",
+            "Cell-free DNA screening for microdeletions has a lower positive predictive value than for common trisomies due to the lower prevalence of these conditions. Diagnostic testing is essential before any clinical decisions.",
+            "If the patient has a clinical diagnosis of tuberous sclerosis (epilepsy, intellectual disability, hypopigmented macules), genetic testing can confirm the diagnosis and positive results indicate need for multisystem surveillance.",
+            "Mitochondrial disease due to respiratory chain defects requires comprehensive testing including both mtDNA sequencing and nuclear genes encoding mitochondrial proteins.",
+            "When attempts to reach a patient with diagnostic results are unsuccessful, proper documentation of all contact attempts and consultation with the care team about alternative methods is appropriate.",
+            "When a patient is in acute grief, it's important to acknowledge this and assess whether proceeding with testing is appropriate at this time. Rushing testing during an emotionally vulnerable period may not serve the patient's best interests.",
+            "Before explaining procedural risks, it's important to explore what the patient understands about the testing options and address any misconceptions or concerns they may have.",
+            "Offering telehealth follow-up is appropriate care that provides access to genetic counseling expertise regardless of geographic barriers, especially important for patients in rural areas.",
+            "Using visual aids and the teach-back method (asking patients to explain information in their own words) are evidence-based strategies for improving comprehension in patients with limited health literacy.",
+            "Contracting includes establishing the parameters of the session, including available time, which helps set expectations and allows for efficient use of the appointment.",
+            "Prescribing or recommending medication changes is outside the genetic counselor's scope of practice. This is the role of the prescribing physician.",
+            "Positive MLH1 promoter methylation with loss of MLH1/PMS2 on IHC indicates a sporadic tumor caused by somatic inactivation of MLH1 through methylation, not Lynch syndrome.",
+            "For a couple dealing with a new fetal diagnosis, coordinating multidisciplinary consultations with relevant specialists helps them understand what to expect and prepare for the baby's care.",
+            "The primary purpose of an IRB is to protect the rights and welfare of human subjects participating in research, ensuring ethical conduct of research.",
+            "For second cousins sharing a grandmother with sickle cell disease: Each cousin has 1/4 × 1/2 = 1/8 chance of being a carrier. Probability both are carriers = 1/8 × 1/8 = 1/64. Risk of affected child = 1/64 × 1/4 = 1/144.",
+            "22q11.2 deletion syndrome (DiGeorge/velocardiofacial syndrome) is associated with conotruncal heart defects including tetralogy of Fallot, truncus arteriosus, and interrupted aortic arch.",
+            "Galactosemia presents in the newborn period with poor feeding, vomiting, jaundice, and hepatomegaly after exposure to galactose-containing feedings (breast milk or standard formula).",
+            "A full mutation in FMR1 (Fragile X syndrome) is associated with intellectual disability, developmental delay, and autism spectrum features, particularly in males.",
+            "Following bone marrow transplant, blood samples contain donor DNA. Skin fibroblasts retain the patient's original germline DNA and should be used for germline genetic testing.",
+            "Residual risk is the most important concept to discuss after negative carrier screening, as no screening test is 100% sensitive and there remains some chance of being a carrier.",
+            "When deletions are in cis in one parent (--/αα) and in trans in the other (-α/-α), there is 0% chance of having a child with Hb Bart's (--/--) because the trans parent cannot contribute a chromosome with two deleted genes.",
+            "X-linked recessive conditions characteristically show affected males born to carrier mothers. Carrier females are usually unaffected or mildly affected.",
+            "Natural selection (selection for or against alleles) violates Hardy-Weinberg equilibrium. The equilibrium assumes no selection pressure on alleles.",
+            "A region of homozygosity on chromosome 15q in a child with developmental features should prompt methylation analysis to evaluate for Prader-Willi or Angelman syndrome, and parental testing to assess for UPD or consanguinity.",
+            "OI type II is typically caused by de novo dominant mutations, but gonadal mosaicism in a parent can result in a recurrence risk of approximately 2-7% for future pregnancies.",
+            "The clinical presentation (hypotonia, feeding difficulties, almond-shaped eyes, small hands/feet, genital hypoplasia in males) is classic for Prader-Willi syndrome. Methylation analysis of 15q11-q13 is the best initial test.",
+            "GINA protects against discrimination by health insurers and employers based on genetic information, but does NOT cover life insurance, disability insurance, or long-term care insurance.",
+            "The primary ethical argument against predictive testing of minors for adult-onset conditions is preserving the child's future autonomy to make their own decision about testing when they reach adulthood.",
+            "When unable to reach a patient with important results, sending a letter requesting they contact the clinic is an appropriate next step that documents the attempt while protecting patient privacy.",
+            "Even with negative genetic testing, a strong family history of cardiomyopathy still confers increased risk. The patient should continue cardiac surveillance as current genetic testing doesn't detect all genetic causes.",
+            "Countertransference occurs when a counselor's own feelings, experiences, or biases influence their reaction to a patient. Recognizing the parallel to her own cousin indicates countertransference.",
+            "When a patient declines testing, the counselor should explore their concerns and feelings rather than ending the session or proceeding against their wishes.",
+            "The medical (teaching) model emphasizes accurate information transfer, while the psychosocial (counseling) model emphasizes patient-centered outcomes including autonomous decision-making and psychological adaptation.",
+            "MLPA is the appropriate method for detecting copy number changes (deletions/duplications) at the exon level within a specific gene.",
+            "If the mother has 2 copies of SMN1 but has an affected child with homozygous deletion, the most likely explanation is that she carries a duplication on one chromosome and a deletion on the other (2+0 configuration).",
+            "A nonsense mutation in DMD typically causes the more severe Duchenne phenotype, while in-frame deletions often result in the milder Becker phenotype with partially functional dystrophin.",
+            "BRCAPRO and Tyrer-Cuzick models incorporate family history to estimate the probability of carrying a BRCA mutation. The Gail model does not include paternal family history.",
+            "Confined placental mosaicism for trisomy 2 is associated with increased risk for intrauterine growth restriction and should be monitored throughout pregnancy.",
+            "The patient is expressing worry and needs emotional support. Responding to the emotional content of their question before providing medical information demonstrates empathy.",
+            "Spending time with family and journaling are healthy emotional processing and social support coping strategies following a difficult diagnosis.",
+            "PGT-M is appropriate when one or both partners carry a known pathogenic variant for a serious genetic condition. Huntington disease, with its 50% transmission risk, is a clear indication.",
+            "For suspected hereditary thrombophilia, targeted testing for the common variants (Factor V Leiden and Prothrombin G20210A) is the most appropriate and cost-effective approach.",
+            "Optical genome mapping and long-read sequencing technologies are particularly good at detecting balanced structural rearrangements and inversions that are difficult to identify with short-read sequencing.",
+            "Having the genotype (homozygous for HFE variant) without clinical manifestations (normal iron studies, no symptoms) is an example of reduced penetrance.",
+            "An affected father with repaired CHD confers approximately 3-5% recurrence risk for heart defects in offspring, which is higher than the general population risk of ~1%.",
+            "Pathogenic variants in SLC26A4 cause Pendred syndrome or non-syndromic hearing loss with enlarged vestibular aqueducts (EVA). Temporal bone imaging should be performed.",
+            "Pendred syndrome is characterized by sensorineural hearing loss and thyroid goiter (euthyroid or hypothyroid). It is caused by mutations in SLC26A4.",
+            "The combination of ultrasound findings strongly suggests trisomy 21. Diagnostic testing (amniocentesis with karyotype or microarray) is indicated despite a low-risk cfDNA screen.",
+            "Cystic hygroma with hydrops rarely resolves spontaneously and carries a poor prognosis. This would not be appropriate to suggest as likely.",
+            "Elevated AFP with normal other markers is the pattern associated with open neural tube defects (spina bifida, anencephaly).",
+            "Deferring to the provider's recommendation rather than making an independent decision is characteristic of a dependent decision-making style.",
+            "Before ordering any genomic testing, especially in a patient without clear indications, exploring their understanding and expectations is essential for informed consent.",
+            "Scheduling patients differently based on insurance type raises concerns about equitable access to care, which relates to the ethical principle of justice.",
+            "HIPAA allows sharing of relevant clinical information for patient care purposes (like a tumor board discussion). Patient identifiers like date of birth, SSN, and home address should be minimized or excluded.",
+            "A deductible is the amount a patient must pay out-of-pocket before insurance begins to cover costs.",
+            "Loss of MSH2/MSH6 is not associated with MLH1 promoter methylation, so this pattern suggests Lynch syndrome. Germline testing is indicated.",
+            "The reclassification from 'association' to 'syndrome' occurs when an underlying genetic etiology is identified, establishing a unifying cause for the collection of features.",
+            "Disruption refers to the breakdown of a previously normal structure due to an external factor (like vascular disruption), as opposed to malformation (intrinsic developmental problem).",
+            "The clinical features described (developmental regression, loss of hand skills, hand-wringing stereotypies in a female) are classic for Rett syndrome. Normal early development followed by regression is a key diagnostic feature.",
+            "Mucocutaneous pigmented macules (especially on lips) with GI polyps is characteristic of Peutz-Jeghers syndrome, caused by STK11 mutations.",
+            "Virtue ethics focuses on the character of the moral agent, asking what a virtuous person would do, rather than focusing on rules (deontology) or consequences (utilitarianism).",
+            "Using existing samples for new research purposes requires either that the original consent allowed for future research use, or a new IRB-approved consent/waiver process.",
+            "Connecting patients with social work can help address practical barriers to care (cost, time, transportation) that might prevent them from following screening recommendations.",
+            "Hemoglobin electrophoresis or HPLC identifies hemoglobin variants by separating different hemoglobin types based on their electrical charge or chemical properties.",
+            "When child protective services is involved, the social worker should be consulted to determine the appropriate disclosure process and who has legal authority to receive medical information.",
+            "In states with licensure, state laws and regulations define what genetic counselors can and cannot do within that state.",
+            "Predictive testing of minors for adult-onset conditions is generally not recommended because there is no medical benefit during childhood, but the counselor should explore the mother's concerns and provide education about the rationale.",
+            "Alpha-thalassemia major (Hb Bart's hydrops fetalis) causes severe fetal anemia and hydrops because alpha globin is needed for fetal hemoglobin (HbF). Beta-thalassemia doesn't manifest until after birth when beta globin becomes predominant.",
+            "Pre-authorization typically requires diagnosis codes (ICD-10), procedure codes (CPT), and clinical documentation supporting medical necessity.",
+            "Advanced paternal age is associated with increased risk for certain autosomal dominant conditions caused by de novo mutations, including achondroplasia, Apert syndrome, and others.",
+            "PGT-M requires identification of the specific pathogenic variant so that the laboratory can develop a test to detect the mutation in embryos.",
+            "Mitochondrial disorders can be caused by mutations in mitochondrial DNA or in nuclear genes encoding mitochondrial proteins. Comprehensive testing should include both.",
+            "Marijuana use during pregnancy has been associated with low birth weight and possible preterm delivery, though major structural malformations have not been clearly established.",
+            "The features described (esophageal atresia, vertebral anomalies, cardiac defects, renal anomalies, limb abnormalities) suggest VACTERL association. Anal atresia is another common component.",
+            "Validating mixed emotions (both relief at having an answer and worry about the future) and exploring what support or information would be helpful demonstrates patient-centered care.",
+            "Professional interpreters should be used for patients with limited English proficiency to ensure accurate communication and avoid potential errors or breaches of confidentiality that can occur with family interpreters.",
+            "Children have limited capacity to provide informed consent, and their dissent (not wanting blood draws) should be considered. The research team should discuss with parents and respect the child's concerns where possible.",
+            "The remaining amount after insurance payment ($400 in this case) is the patient's responsibility, which may include coinsurance, copay, or amount applied to deductible.",
+            "Income level is a primary factor in determining Medicaid eligibility, along with factors like family size, pregnancy status, disability, and age.",
+            "BRCA2 mutations confer the highest risk for prostate cancer among hereditary cancer genes, with lifetime risk estimated at 15-25%.",
+            "Qualitative risk language is most appropriate when precise numerical risks cannot be calculated due to insufficient data, uncertain family history, or complex inheritance patterns.",
+            "Beginning with an open-ended question about what prompted the patient to seek genetic counseling helps establish rapport, understand their concerns, and set the agenda for the session.",
+            "Insurance pays 80% of the allowable amount ($900 × 0.80 = $720). Patient responsibility is the remaining 20% = $180.",
+            "The deductible ($500) must be paid first. After that, the patient pays the copay ($50 × 3 days = $150). Total = $500 + $150 = $650.",
+            "Maternal PKU (elevated phenylalanine in the mother) can cause fetal malformations including heart defects and microcephaly, even if the fetus doesn't have PKU. This is maternal PKU syndrome.",
+            "HbA1c reflects glycemic control over the preceding 2-3 months. Good periconceptional glucose control (low HbA1c) is associated with lower risk of fetal malformations in diabetic pregnancies.",
+            "The period of organogenesis (weeks 3-8 post-conception) is when major organ systems are forming and the embryo is most susceptible to teratogenic effects causing structural malformations.",
+            "Hydrops fetalis in the first trimester with normal karyotype should raise suspicion for alpha-thalassemia major (Hb Bart's), especially in populations with high carrier frequencies.",
+            "The clinical features (developmental delay, supravalvular aortic stenosis, stellate iris, full cheeks, wide mouth) are classic for Williams syndrome. FISH or microarray for the 7q11.23 deletion confirms the diagnosis.",
+            "The quad screen pattern (elevated hCG and Inhibin A, low AFP and uE3) is characteristic of Down syndrome. Soft markers might be expected on ultrasound.",
+            "Mirroring involves repeating the patient's exact words or phrases back to them, encouraging them to elaborate on their thoughts or feelings.",
+            "Mosaic Turner syndrome patients may retain some ovarian function and spontaneous pregnancy is possible, though fertility is often reduced. Referral to reproductive endocrinology is appropriate.",
+            "Organizing information into categories and summarizing key points helps patients retain information. Primacy and recency effects mean people remember beginnings and endings best.",
+            "When a professional interpreter is unavailable, telephone interpreter services should be used rather than relying on family members or friends who may lack medical knowledge and whose presence may affect patient disclosure.",
+            "After contracting, the next step is to explore the patient's understanding and motivations. Understanding their perspective is essential before making decisions about care.",
+            "Insurance pays 70% of the allowable amount ($100 × 0.70 = $70). Patient pays the remaining 30% = $30.",
+            "NORD provides comprehensive support for rare disease families, including patient assistance programs, educational resources, advocacy, and connections to specialists.",
+            "For families preparing for a baby with known health issues, coordinating prenatal consultations with specialists who will manage the baby's care is the most immediately helpful resource.",
+            "The Common Rule (45 CFR 46) establishes protections for human subjects in federally funded research, including requirements for informed consent and IRB review.",
+            "Prospective interventional trials involve active participation and potential risks, requiring full informed consent. Retrospective chart reviews with de-identified data typically don't require individual consent.",
+            "The NSGC position emphasizes respect for the future child's autonomy in deciding whether to undergo predictive testing for adult-onset conditions.",
+            "Effective patient education materials should be accessible and focus on practical information about how testing can benefit the patient, rather than overwhelming them with technical details.",
+            "An affected parent with affected offspring of both sexes (approximately 50% affected) indicates autosomal dominant inheritance. The de novo mutation explains why the parents are unaffected.",
+            "Exploring financial assistance options (patient assistance programs, charity care, foundation grants) is the appropriate first step to help ensure the patient can access needed testing.",
+            "Robust data security measures to prevent unauthorized access are the primary concern for any system storing sensitive genomic information.",
+            "Monozygotic twin females can be discordant for X-linked conditions due to random X-inactivation. One twin might have predominantly inactivated the normal X while the other inactivated the mutant X.",
+            "Multiple chromosomal abnormalities on cfDNA can indicate maternal malignancy or extensive placental mosaicism, as tumor DNA or abnormal placental cells shed into maternal circulation.",
+            "For patients with limited English proficiency and limited education, using professional interpreters and visual aids with simplified explanations ensures accurate communication.",
+            "A 35-year-old woman with a balanced Robertsonian translocation has a significantly higher risk of having a child with chromosomal abnormality (unbalanced translocation) compared to age-related risk alone.",
+            "GINA is most relevant for asymptomatic individuals considering predictive genetic testing who are concerned about insurance and employment discrimination based on genetic information.",
+            "Hemophilia A is commonly caused by intron 22 and intron 1 inversions in the F8 gene, which are not detected by standard sequencing. Specific inversion testing should be performed if sequencing is negative.",
+            "For early-onset Alzheimer disease, determining the age of onset and whether a causative variant was found in the affected relative is essential for risk assessment and determining if testing is appropriate."
+        ];
 
         const STORAGE_KEY = 'abgc_exam_state';
+        const SEED_KEY = 'abgc_exam_seed';
+
+        function seededRandom(seed) {
+            const x = Math.sin(seed++) * 10000;
+            return x - Math.floor(x);
+        }
+
+        function shuffleWithSeed(array, seed) {
+            const shuffled = [...array];
+            let currentSeed = seed;
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(seededRandom(currentSeed++) * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function getOrCreateSeed() {
+            let seed = localStorage.getItem(SEED_KEY);
+            if (seed === null) {
+                seed = Math.floor(Math.random() * 1000000);
+                localStorage.setItem(SEED_KEY, seed);
+            }
+            return parseInt(seed);
+        }
+
+        (function shuffleQuestions() {
+            const seed = getOrCreateSeed();
+            const indices = Array.from({ length: questions.length }, (_, i) => i);
+            const shuffledIndices = shuffleWithSeed(indices, seed);
+            
+            const shuffledQuestions = shuffledIndices.map(i => questions[i]);
+            const shuffledAnswers = shuffledIndices.map(i => correctAnswers[i]);
+            const shuffledExplanations = shuffledIndices.map(i => explanations[i]);
+            
+            questions.length = 0;
+            questions.push(...shuffledQuestions);
+            correctAnswers.length = 0;
+            correctAnswers.push(...shuffledAnswers);
+            explanations.length = 0;
+            explanations.push(...shuffledExplanations);
+        })();
 
         let currentQuestionIndex = 0;
         let selectedAnswers = {};
